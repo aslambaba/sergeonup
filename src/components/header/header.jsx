@@ -57,15 +57,15 @@ export default function Header() {
         </Col>
 
         {/* Book a Chat Section */}
-        {/* <Col lg={1}>
-          <div className={styles.bookachat}>
+        <Col lg={2}>
+          <div className={styles.container3}>
             <span className={styles.line1}>Book</span>
             <br />
             <span className={styles.line2}>A</span>
             <br />
             <span className={styles.line3}>Chat</span>
           </div>
-        </Col> */}
+        </Col>
 
         {/* <Col lg={2}></Col> */}
       </Row>
