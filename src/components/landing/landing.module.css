@@ -1,0 +1,53 @@
+.mainLandingBody, .mainLandingBody2{
+    text-align: center;
+    background-color: #3366FF;
+    color: #3366FF;
+    padding: 18px;
+}
+.mainLandingBody2{
+    text-align: left;
+    padding-top: 0px !important;
+    padding-bottom: 9px;
+}
+
+.mainLandingContainer, .mainLandingContainer2{
+    background-color: #33FFCC;
+    padding: 180px 0px;
+    border-radius: 20px;
+}
+
+@media (min-width: 1024px) {
+  .mainLandingContainer2 {
+    height: 550px;
+  }
+}
+
+.mainLandingContainer2{
+    padding: 10px 10px;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.mainLandingBody2 p{
+    margin: 20px 0px;
+}
+
+.mainLandingBody h3{
+    font-size: 50px;
+    font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.mainLandingBody h4{
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.mainLandingBody2 h4{
+    text-align: center;
+    padding-top: 9px;
+}
