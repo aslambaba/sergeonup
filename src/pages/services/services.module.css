@@ -1,0 +1,120 @@
+.green{
+    color: #006633;
+}
+
+.ServicesMainSection{
+    background-color: #FFFFCC;
+    font-family: "Poppins", sans-serif !important; 
+}
+
+.ServiceMainSec1, .ServiceMainSec2, .ServiceMainSec3, .ServiceMainSec4, .ServiceMainSec5{
+    border: 4px solid #006633;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+
+.ServicesMainSection h2{
+    color: #006633;
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    -webkit-text-stroke: 1px #3366FF;
+    text-transform: uppercase;
+}
+
+.ServicesMainSection table{
+    width: 100%;
+    text-align: center;
+    font-weight: 800;
+    font-size: 22px;
+    color: #3366FF;
+}
+
+.tableText, .tableText2{
+    font-style: italic;
+    -webkit-text-stroke: 1px #006633;
+    border-radius: "30px";
+}
+
+.tableText{
+    font-size: 22px;
+}
+.tableText2{
+    font-size: 34px;
+}
+
+.whatsappSection{
+    background-color: #3366FF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 8px;
+    padding: 4px;
+}
+.whatsappSection h3{
+    margin: 0px;
+    color: #33FFCC;
+    -webkit-text-stroke: 1px #006633;
+    font-weight: 800;
+    font-size: 34px;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+.whatsappSection img{
+    height: 80px;
+    width: 80px;
+}
+
+.whatsappSectionSmall{
+    background-color: #3366FF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 8px;
+    padding: 4px;
+}
+.whatsappSectionSmall h3{
+    margin: 0px;
+    color: #33FFCC !important;
+    -webkit-text-stroke: 1px #006633;
+    font-weight: 800 !important;
+    font-size: 26px !important;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+.whatsappSectionSmall img{
+    height: 60px;
+    width: 60px;
+}
+
+.ServiceSec2 p, .ServiceSec3 p{
+    font-family: "Poppins", sans-serif !important;
+    font-size: 24px;
+    font-weight: 500;
+    color: #3366FF;
+}
+
+.ServiceSec3 h3{
+    text-align: center;
+    color: #3366FF;
+    font-weight: 700;
+    font-style: italic;
+    -webkit-text-stroke: 1px #006633;
+
+}
+
+
+.ServiceMainSec3 .ServiceSec1{
+    text-align: center;
+    padding: 20px;
+}
+.ServiceSec1 > img{
+    height: 170px;
+    width: 45%;
+}
+.ServiceSec1FORLAST > img{
+    width: 100%;
+    height: 100px;
+}

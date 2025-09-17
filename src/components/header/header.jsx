@@ -21,10 +21,10 @@ export default function Header() {
               <Col lg={12}>
                 <ul>
                   <li className={styles.home}>
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>
-                    <a href="#">Services</a>
+                    <a href="services">Services</a>
                   </li>
                   <li>
                     <a href="#">About</a>

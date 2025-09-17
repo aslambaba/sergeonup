@@ -15,34 +15,6 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-
-        {/* React and ReactDOM */}
-        <Script
-          src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-        />
-        <Script
-          src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-        />
-
-        {/* React Bootstrap */}
-        <Script
-          src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-
-        {/* Inline script using dangerouslySetInnerHTML */}
-        <Script
-          id="react-bootstrap-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `var Alert = ReactBootstrap.Alert;`,
-          }}
-        />
       </body>
     </Html>
   );

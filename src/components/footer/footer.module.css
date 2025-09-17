@@ -1,0 +1,28 @@
+.FooterMain{
+    background-color: #3366FF;
+    padding: 20px 40px;
+
+}
+
+.FooterMainSec{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.FooterMainSec h1{
+    font-size: 78px;
+    font-weight: 800;
+    color: #FFFFCC;
+    -webkit-text-stroke: 2px #006633;
+}
+
+.FooterMain h3{
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    color: #FFFFCC;
+    -webkit-text-stroke: 2px #006633;
+
+}

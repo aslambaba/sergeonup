@@ -20,6 +20,11 @@ export default function Services() {
       <div className={styles.mainLandingBody}>
         <Container>
           <Row>
+            <Col lg={12}>
+              <h4 style={{ color: "#33FFCC" }}>
+                SO, WHAT CAN WE DO FOR Y O U ?
+              </h4>
+            </Col>
             <Col lg={3}>
               <div className={styles.sericeBox}>
                 <h3>BRONZE OFFER</h3>
@@ -36,7 +41,7 @@ export default function Services() {
                   expertise equals your digital dominance. Click now - let's
                   reveal your hidden opportunities!
                 </p>
-                <div style={{fontSize:"1.6rem"}}>
+                <div style={{ fontSize: "1.6rem" }}>
                   <h5>
                     <span style={{ fontWeight: 500 }}>$</span> <br /> FREE
                   </h5>
@@ -72,12 +77,17 @@ export default function Services() {
                   £100 a month. It’s secure, with no setup, no contracts.  Get a
                   demo within 24 hours. Ready to keep your profits? Click now!
                 </p>
-                <div  style={{}}>
+                <div style={{}}>
                   <h5>
-                    <span style={{ fontWeight: 500,fontSize:"1.8rem" }}>$</span> <br /> 125
+                    <span style={{ fontWeight: 500, fontSize: "1.8rem" }}>
+                      $
+                    </span>{" "}
+                    <br /> 125
                   </h5>
                   <h5 className={styles.green}>
-                    <span style={{ fontWeight: 500,fontSize:"1.8rem" }}>£</span>
+                    <span style={{ fontWeight: 500, fontSize: "1.8rem" }}>
+                      £
+                    </span>
                     <br /> 100
                   </h5>
                 </div>

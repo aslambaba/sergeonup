@@ -6,6 +6,10 @@
     padding-bottom: 80px;
     background-color: #3366FF;
 }
+.mainLandingBody h4{
+    text-align: center;
+    padding-top: 9px;
+}
 
 .sericeBox{
     background-color: #33FFCC;
@@ -51,3 +55,4 @@
     width: 80px;
     margin: 0px 5px;
 }
+

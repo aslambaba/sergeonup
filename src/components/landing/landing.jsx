@@ -18,7 +18,6 @@ export default function Landing() {
                 <p>Robin is a visionary CEO, according to not one but two Business Magazines, TradeFlock and CIS. He has 25 years’ experience working with legendary Hollywood Stars up close and personal. He has a BAFTA nomination.</p>
                 <p>Tam has a Computer Science Degree from Cambridge, 25 years experience in SEO and  a recent Semrush Certification in AI0. Plus top global Aesthetic Surgeon’s plaudits from Beverly Hills to Barcelona, the UAE and beyond. </p>
             </div>
-            <h4 style={{color: "#33FFCC"}}>SO, WHAT CAN WE DO FOR  Y O U ?</h4>
         </div>
     </div>
   );
