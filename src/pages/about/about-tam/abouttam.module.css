@@ -1,0 +1,42 @@
+.AboutRobinMainContainer{
+    background-color: #FFFFCC;
+    font-family: "Poppins", sans-serif !important; 
+}
+
+.AboutRobinSec{
+    text-align: center;
+    color: #3366ff;
+    font-weight: 700;
+    margin: 20px 0px;
+}
+
+.ImageContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ImageContainer img{
+    margin: 0px 10px
+    ;
+}
+
+.AboutRobinSecText{
+    background-color: #33FFCC;
+    border: 5px solid #006633;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 0px 10px;
+}
+
+.AboutRobinSecText h3{
+    color: #006633;
+    font-weight: 600;
+}
+
+.AboutRobinSecText h4{
+    text-align: left;
+    font-size: 28px;
+    font-family: "Poppins", sans-serif !important; 
+}

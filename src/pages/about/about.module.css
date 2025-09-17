@@ -1,0 +1,61 @@
+.AboutMainContainer {
+  background-color: #ffffcc;
+  font-family: "Poppins", sans-serif !important; 
+}
+
+.AboutMainContainer h2 {
+  color: #006633;
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+  -webkit-text-stroke: 1px #3366ff;
+  text-transform: uppercase;
+}
+
+.AboutSec1 {
+  text-align: center;
+}
+
+.ImageContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ImageContainer img {
+  height: 200px;
+  width: 160px;
+}
+.AboutSec1 h3 {
+  color: #3366ff;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.AboutSec1Text{
+    background-color: #33FFCC;
+    border: 5px solid #006633;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.AboutSec1Text h3{
+    color: #006633;
+}
+.AboutSec1Text h4{
+    color: #3366ff;
+    text-align: left;
+    line-height: 33px;
+}
+
+.AboutSec1 button{
+    background-color: #CCFFFF;
+    border: 2px solid #006633;
+    color: #3366ff;
+    padding: 0px 10px;
+    border-radius: 10px;
+    margin: 10px 0px;
+    font-weight: 600;
+    font-size: 18px;
+    word-spacing: 2px;
+}

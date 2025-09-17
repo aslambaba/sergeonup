@@ -1,0 +1,34 @@
+.contactMainSection{
+    background-color: #FFFFCC;
+    text-align: center;
+    color: #3366ff;
+    font-weight: 800 !important;
+
+}
+
+.contactMainSection h2{
+    color: #006633;
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+  -webkit-text-stroke: 1px #3366ff;
+text-transform: uppercase;
+}
+
+.contactMainSection h4{
+  font-weight: 600;
+}
+
+.contactTextSec1{
+    font-weight: 700;
+    line-height: 8px;
+    background-color: #33FFCC;
+    border: 5px solid #006633;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.contactTextSec1 img{
+    margin: 0px 10px;
+}
