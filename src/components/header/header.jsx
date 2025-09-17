@@ -33,7 +33,7 @@ export default function Header() {
                     <a href="#">Blog</a>
                   </li>
                   <li>
-                    <a href="#">Contact</a>{" "}
+                    <a href="/contact">Contact</a>{" "}
                     <Image
                       className={styles.musicnoteIcon}
                       src={MainLogo2}

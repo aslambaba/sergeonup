@@ -24,7 +24,7 @@ export default function Contact() {
           </p>
           <br />
           <div
-            style={{ display: "flex", flexDirection: "row", lineHeight: "1.5" }}
+            style={{ display: "flex", flexDirection: "row", lineHeight: "1.5", justifyContent: "center", alignItems:"center" }}
           >
             <p>Text, voice or video, its your call</p>
             <Image src={WhatsAppImg} alt="Logo" width={50} height={50} />
