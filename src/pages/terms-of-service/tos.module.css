@@ -1,0 +1,83 @@
+.TosMainSection{
+    background-color: #FFFFCC;
+    text-align: center;
+    font-family: "Poppins", sans-serif !important; 
+}
+
+.TosMainSection h1{
+    color: #006633;
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+  -webkit-text-stroke: 1px #3366ff;
+text-transform: uppercase;
+}
+
+
+.TosTextContainer{
+    border: 5px solid #006633;
+    border-radius: 5px;
+    padding: 40px;
+    margin: 10px;
+}
+
+.TosTextContainer2{
+     border: 5px solid #006633;
+    border-radius: 5px;
+    padding: 40px;
+    margin: 10px;
+    text-align: left;
+}
+
+.TosCOCSection{
+    background-color: #33FFCC;
+    border: 3px solid #3366ff;
+    border-radius: 4px;
+    padding: 15px 0px;
+}
+
+.TosCOCSection h2{
+    color: #3366ff;
+    font-weight: 900;
+    font-size: 50px;
+}
+
+.TosCOCSection h1{
+    color: #006633;
+}
+
+.TosCOCSection p{
+    color: #3366ff;
+    font-weight: 800;
+    font-size: 38px;
+}
+
+.COCImageSec{
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.TosTextContainer2 p{
+    color: #3366ff;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.TosTextContainer2 li{
+    color: #3366ff;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.TosTextContainer2 h1,
+.TosTextContainer2 h2,
+.TosTextContainer2 h3,
+.TosTextContainer2 h4,
+.TosTextContainer2 h5,
+.TosTextContainer2 h6 {
+    color: #006633;
+    font-size: 44px;
+    font-weight: 700;
+}
