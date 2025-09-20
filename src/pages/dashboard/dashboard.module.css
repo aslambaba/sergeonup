@@ -1,0 +1,81 @@
+.dashboardMainSection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboardContainer {
+  padding: 40px 0;
+}
+
+.sectionTitle {
+  color: #006633;
+  font-weight: 700;
+}
+
+.newPostBtn {
+  background-color: #006633 !important;
+  border: none !important;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 6px;
+}
+
+.newPostBtn:hover {
+  background-color: #004d26 !important;
+}
+
+.blogCard {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.blogImage {
+  height: 200px;
+  object-fit: cover;
+}
+
+.cardButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.blogModal .modal-content {
+  border-radius: 10px;
+  background-color: #ccffff;
+}
+
+.inputField {
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.editorToolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.editorArea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  min-height: 300px;
+  background: #fff;
+  outline: none;
+}
+
+.postBtn {
+  background-color: #006633 !important;
+  border: none !important;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 6px;
+}
+
+.postBtn:hover {
+  background-color: #004d26 !important;
+}
