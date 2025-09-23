@@ -8,67 +8,70 @@ import MainLogo2 from "./images/musicnote.png";
 export default function Header() {
   return (
     <Container>
-      <Row>
-        {/* Logo */}
-        <Col lg={2}>
-          <Image className={styles.mainLogo} src={MainLogo} alt="Logo" fluid />
-        </Col>
+      <div className={styles.HeaderMain}>
+        <Row>
+          {/* Logo */}
+          <Col lg={2} md={2} sm={2} xs={2} className="px-1">
+            <Image
+              className={styles.mainLogo}
+              src={MainLogo}
+              alt="Logo"
+              fluid
+            />
+          </Col>
 
-        {/* Menu Section */}
-        <Col lg={8}>
-          <div className={styles.menuItemSec}>
-            <Row>
-              <Col lg={12}>
-                <ul>
-                  <li className={styles.home}>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="/services">Services</a>
-                  </li>
-                  <li>
-                    <a href="/about">About</a>
-                  </li>
-                  <li>
-                    <a href="#">Blog</a>
-                  </li>
-                  <li>
-                    <a href="/contact">Contact</a>{" "}
-                    <Image
-                      className={styles.musicnoteIcon}
-                      src={MainLogo2}
-                      alt="Note"
-                    />
-                  </li>
-                </ul>
-              </Col>
-              <Col lg={12}>
-                <div className={styles.contentno2}>
-                  <p>
-                    <span className={styles.profitword}>PROFIT</span>
-                    <span className={styles.or}>OR</span>
-                    <span className={styles.no}>NO</span>
-                    <span className={styles.fee}>FEE</span>
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </div>
-        </Col>
+          {/* Menu Section */}
+          <Col lg={8} md={8} sm={8} xs={8} className="px-1">
+            <div className={styles.menuItemSec}>
+              <Row>
+                <Col lg={12}>
+                  <ul>
+                    <li className={styles.home}>
+                      <a href="/">Home</a>
+                    </li>
+                    <li>
+                      <a href="/services">Services</a>
+                    </li>
+                    <li>
+                      <a href="/about">About</a>
+                    </li>
+                    <li>
+                      <a href="#">Blog</a>
+                    </li>
+                    <li>
+                      <a href="/contact">Contact</a>{" "}
+                      <Image
+                        className={styles.musicnoteIcon}
+                        src={MainLogo2}
+                        alt="Note"
+                      />
+                    </li>
+                  </ul>
+                </Col>
+                <Col lg={12}>
+                  <div className={styles.contentno2}>
+                    <p className={styles.profitword}>PROFIT</p>
+                    <p>OR</p>
+                    <p>NO</p>
+                    <p>FEE</p>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+          </Col>
 
-        {/* Book a Chat Section */}
-        <Col lg={2}>
-          <div className={styles.container3}>
-            <span className={styles.line1}>Book</span>
-            <br />
-            <span className={styles.line2}>A</span>
-            <br />
-            <span className={styles.line3}>Chat</span>
-          </div>
-        </Col>
+          {/* Book a Chat Section */}
+          <Col lg={2} md={2} sm={2} xs={2} className="px-1">
+            <div className={styles.container3}>
+              <span className={styles.line1}>Book</span>
+              <span className={styles.line2}>A</span>
+              <span className={styles.line3}>Chat</span>
+            </div>
+          </Col>
 
-        {/* <Col lg={2}></Col> */}
-      </Row>
+          {/* <Col lg={2}></Col> */}
+        </Row>
+      </div>
     </Container>
   );
 }

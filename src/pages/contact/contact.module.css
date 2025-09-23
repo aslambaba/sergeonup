@@ -1,22 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .contactMainSection{
     background-color: #FFFFCC;
     text-align: center;
     color: #3366ff;
     font-weight: 800 !important;
-
 }
 
 .contactMainSection h2{
     color: #006633;
-  font-size: 48px;
-  font-weight: 800;
-  text-align: center;
-  -webkit-text-stroke: 1px #3366ff;
-text-transform: uppercase;
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    -webkit-text-stroke: 1px #3366ff;
+    text-transform: uppercase;
 }
 
 .contactMainSection h4{
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .contactTextSec1{
@@ -29,6 +30,168 @@ text-transform: uppercase;
     font-size: 18px;
     text-align: center;
 }
+
 .contactTextSec1 img{
     margin: 0px 10px;
+}
+
+/* Responsive font and image scaling only - no layout changes */
+
+/* Large screens (desktops 1200px+) */
+@media (min-width: 1200px) {
+    .contactMainSection h2 {
+        font-size: 56px;
+    }
+    
+    .contactMainSection h4 {
+        font-size: 28px;
+    }
+    
+    .contactMainSection h5 {
+        font-size: 20px;
+    }
+    
+    .contactTextSec1 {
+        font-size: 20px;
+    }
+}
+
+/* Medium-large screens (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .contactMainSection h2 {
+        font-size: 44px;
+    }
+    
+    .contactMainSection h4 {
+        font-size: 22px;
+    }
+    
+    .contactMainSection h5 {
+        font-size: 17px;
+    }
+    
+    .contactTextSec1 {
+        font-size: 17px;
+    }
+}
+
+/* Medium screens (tablets landscape 768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .contactMainSection h2 {
+        font-size: 40px;
+    }
+    
+    .contactMainSection h4 {
+        font-size: 20px;
+    }
+    
+    .contactMainSection h5 {
+        font-size: 16px;
+    }
+    
+    .contactTextSec1 {
+        font-size: 16px;
+    }
+}
+
+/* Small screens (tablets portrait 576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .contactMainSection h2 {
+        font-size: 36px;
+    }
+    
+    .contactMainSection h4 {
+        font-size: 18px;
+    }
+    
+    .contactMainSection h5 {
+        font-size: 15px;
+    }
+    
+    .contactTextSec1 {
+        font-size: 15px;
+    }
+
+    .contactTextSec1 p{
+      line-height: 16px;
+    }
+    
+    /* Scale images proportionally */
+    .contactTextSec1 img[width="50"] {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .contactTextSec1 img[width="100"] {
+        width: 80px !important;
+        height: 40px !important;
+    }
+}
+
+/* Extra small screens (phones 480px - 575px) */
+@media (max-width: 575px) and (min-width: 480px) {
+    .contactMainSection h2 {
+        font-size: 32px;
+    }
+    
+    .contactMainSection h4 {
+        font-size: 16px;
+    }
+    
+    .contactMainSection h5 {
+        font-size: 14px;
+    }
+    
+    .contactTextSec1 {
+        font-size: 14px;
+    }
+
+    .contactTextSec1 p{
+      line-height: 16px;
+    }
+    
+    /* Scale images */
+    .contactTextSec1 img[width="50"] {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .contactTextSec1 img[width="100"] {
+        width: 70px !important;
+        height: 35px !important;
+    }
+}
+
+/* Very small screens (small phones under 480px) */
+@media (max-width: 479px) {
+    .contactMainSection h2 {
+        font-size: 28px;
+    }
+    
+    .contactMainSection h4 {
+        font-size: 14px;
+    }
+    
+    .contactMainSection h5 {
+        font-size: 12px;
+    }
+    
+    .contactTextSec1 {
+        font-size: 12px;
+    }
+    
+    .contactTextSec1 p{
+      line-height: 16px;
+    }
+    
+    /* Scale images for very small phones */
+    .contactTextSec1 img[width="50"] {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    .contactTextSec1 img[width="100"] {
+        width: 60px !important;
+        height: 30px !important;
+    }
 }

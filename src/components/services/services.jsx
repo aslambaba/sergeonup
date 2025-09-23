@@ -25,7 +25,7 @@ export default function Services() {
                 SO, WHAT CAN WE DO FOR Y O U ?
               </h4>
             </Col>
-            <Col lg={3}>
+            <Col lg={3} md={6} sm={12} xs={12}>
               <div className={styles.sericeBox}>
                 <h3>BRONZE OFFER</h3>
                 <Image src={BrownStar} alt="Logo" />
@@ -52,12 +52,12 @@ export default function Services() {
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={3} md={6} sm={12} xs={12}>
               <div className={styles.sericeBox}>
                 <h3>OFFER</h3>
                 <Row>
-                  <Col lg={3}></Col>
-                  <Col lg={9}>
+                  <Col lg={3} md={3} sm={3} xs={3}></Col>
+                  <Col lg={9} md={9} sm={9} xs={9}>
                     <div>
                       <Image
                         style={{ width: "100%" }}
@@ -93,11 +93,11 @@ export default function Services() {
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={3} md={6} sm={12} xs={12}>
               <div className={styles.sericeBox}>
                 <h3>GOLD OFFER</h3>
                 <Row>
-                  <Col lg={4} className="pe-0">
+                  <Col lg={4} md={4} sm={4} xs={4} className="pe-0">
                     <div>
                       <Image
                         style={{ width: "100%" }}
@@ -106,7 +106,7 @@ export default function Services() {
                       />
                     </div>
                   </Col>
-                  <Col lg={8} className="ps-0">
+                  <Col lg={8} md={8} sm={8} xs={8} className="ps-0">
                     <div>
                       <Image
                         style={{ width: "100%" }}
@@ -145,11 +145,11 @@ export default function Services() {
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={3} md={6} sm={12} xs={12}>
               <div className={styles.sericeBox}>
                 <h3>SOS RESCUE</h3>
                 <Row>
-                  <Col lg={4} className="pe-0">
+                  <Col lg={4} md={4} sm={4} xs={4} className="pe-0">
                     <div>
                       <Image
                         style={{ width: "100%" }}
@@ -158,7 +158,7 @@ export default function Services() {
                       />
                     </div>
                   </Col>
-                  <Col lg={8} className="ps-0">
+                  <Col lg={8} md={8} sm={8} xs={8} className="ps-0">
                     <div>
                       <Image style={{ width: "100%" }} src={OpImg} alt="Logo" />
                     </div>

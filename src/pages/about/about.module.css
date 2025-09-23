@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .AboutMainContainer {
-  background-color: #ffffcc;
+  background-color: white;
   font-family: "Poppins", sans-serif !important; 
+  padding: 20px 0;
 }
 
 .AboutMainContainer h2 {
@@ -10,10 +13,12 @@
   text-align: center;
   -webkit-text-stroke: 1px #3366ff;
   text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
 .AboutSec1 {
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .ImageContainer {
@@ -22,40 +27,337 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
+
 .ImageContainer img {
   height: 200px;
   width: 160px;
+  object-fit: cover;
 }
+
 .AboutSec1 h3 {
   color: #3366ff;
   font-weight: 600;
   letter-spacing: 2px;
-}
-.AboutSec1Text{
-    background-color: #33FFCC;
-    border: 5px solid #006633;
-    border-radius: 25px;
-    padding: 10px;
+  font-size: 24px;
+  margin: 20px 0;
 }
 
-.AboutSec1Text h3{
-    color: #006633;
-}
-.AboutSec1Text h4{
-    color: #3366ff;
-    text-align: left;
-    line-height: 33px;
+.AboutSec1Text {
+  background-color: #33FFCC;
+  border: 5px solid #006633;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px 0;
 }
 
-.AboutSec1 button{
-    background-color: #CCFFFF;
-    border: 2px solid #006633;
-    color: #3366ff;
-    padding: 0px 10px;
-    border-radius: 10px;
-    margin: 10px 0px;
-    font-weight: 600;
+.AboutSec1Text h3 {
+  color: #006633;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.AboutSec1Text h4 {
+  color: #3366ff;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.AboutSec1 button {
+  background-color: #CCFFFF;
+  border: 2px solid #006633;
+  color: #3366ff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-weight: 600;
+  font-size: 18px;
+  word-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.AboutSec1 button:hover {
+  background-color: #B3FFFF;
+  transform: translateY(-2px);
+}
+
+/* Large screens (desktops 1200px+) */
+@media (min-width: 1200px) {
+  .AboutMainContainer h2 {
+    font-size: 56px;
+  }
+  
+  .ImageContainer img {
+    height: 240px;
+    width: 190px;
+  }
+  
+  .AboutSec1 h3 {
+    font-size: 28px;
+  }
+  
+  .AboutSec1Text h3 {
+    font-size: 26px;
+  }
+  
+  .AboutSec1Text h4 {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+  
+  .AboutSec1 button {
+    font-size: 20px;
+    padding: 14px 24px;
+  }
+  
+  .AboutSec1Text {
+    padding: 25px;
+  }
+}
+
+/* Medium-large screens (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .AboutMainContainer h2 {
+    font-size: 44px;
+  }
+  
+  .ImageContainer img {
+    height: 180px;
+    width: 145px;
+  }
+  
+  .AboutSec1 h3 {
+    font-size: 22px;
+  }
+  
+  .AboutSec1Text h3 {
+    font-size: 20px;
+  }
+  
+  .AboutSec1Text h4 {
+    font-size: 16px;
+  }
+  
+  .AboutSec1 button {
+    font-size: 17px;
+    padding: 11px 18px;
+  }
+  
+  .AboutSec1Text {
+    padding: 18px;
+  }
+}
+
+/* Medium screens (tablets landscape 768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .AboutMainContainer {
+    padding: 15px 0;
+  }
+  
+  .AboutMainContainer h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+  
+  .ImageContainer img {
+    height: 160px;
+    width: 130px;
+  }
+  
+  .AboutSec1 {
+    margin-bottom: 30px;
+  }
+  
+  .AboutSec1 h3 {
+    font-size: 20px;
+    margin: 15px 0;
+  }
+  
+  .AboutSec1Text {
+    padding: 15px;
+    margin: 15px 0;
+  }
+  
+  .AboutSec1Text h3 {
     font-size: 18px;
-    word-spacing: 2px;
+  }
+  
+  .AboutSec1Text h4 {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .AboutSec1 button {
+    font-size: 16px;
+    padding: 10px 16px;
+    margin: 15px 0;
+  }
+}
+
+/* Small screens (tablets portrait 576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .AboutMainContainer {
+    padding: 10px 0;
+  }
+  
+  .AboutMainContainer h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .ImageContainer {
+    margin-bottom: 15px;
+  }
+  
+  .ImageContainer img {
+    height: 140px;
+    width: 115px;
+  }
+  
+  .AboutSec1 {
+    margin-bottom: 25px;
+  }
+  
+  .AboutSec1 h3 {
+    font-size: 18px;
+    margin: 12px 0;
+    letter-spacing: 1px;
+  }
+  
+  .AboutSec1Text {
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 20px;
+  }
+  
+  .AboutSec1Text h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .AboutSec1Text h4 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .AboutSec1 button {
+    font-size: 15px;
+    padding: 9px 14px;
+    margin: 12px 0;
+  }
+}
+
+/* Extra small screens (phones 480px - 575px) */
+@media (max-width: 575px) and (min-width: 480px) {
+  .AboutMainContainer {
+    padding: 8px 0;
+  }
+  
+  .AboutMainContainer h2 {
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+  
+  .ImageContainer {
+    margin-bottom: 12px;
+  }
+  
+  .ImageContainer img {
+    height: 120px;
+    width: 100px;
+  }
+  
+  .AboutSec1 {
+    margin-bottom: 20px;
+  }
+  
+  .AboutSec1 h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    letter-spacing: 1px;
+  }
+  
+  .AboutSec1Text {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 18px;
+    border-width: 3px;
+  }
+  
+  .AboutSec1Text h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .AboutSec1Text h4 {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+  
+  .AboutSec1 button {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 10px 0;
+    word-spacing: 1px;
+  }
+}
+
+/* Very small screens (small phones under 480px) */
+@media (max-width: 479px) {
+  .AboutMainContainer {
+    padding: 5px 0;
+  }
+  
+  .AboutMainContainer h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    -webkit-text-stroke: 0.5px #3366ff;
+  }
+  
+  .ImageContainer {
+    margin-bottom: 10px;
+  }
+  
+  .ImageContainer img {
+    height: 100px;
+    width: 85px;
+  }
+  
+  .AboutSec1 {
+    margin-bottom: 18px;
+  }
+  
+  .AboutSec1 h3 {
+    font-size: 14px;
+    margin: 8px 0;
+    letter-spacing: 0.5px;
+  }
+  
+  .AboutSec1Text {
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 15px;
+    border-width: 3px;
+  }
+  
+  .AboutSec1Text h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  
+  .AboutSec1Text h4 {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  
+  .AboutSec1 button {
+    font-size: 13px;
+    padding: 7px 10px;
+    margin: 8px 0;
+    word-spacing: 1px;
+  }
 }

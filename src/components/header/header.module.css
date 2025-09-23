@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+.HeaderMain{
+    margin: 20px 0px;
+}
 
 .mainLogo{
     width: 100%;
@@ -7,94 +10,89 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    object-fit: contain;
 }
+
 .menuItemSec{
-    text-align: center;
+    /* text-align: center; */
     font-size: 22px;
     font-weight: 700;
+    line-height: 55px;
 }
+
 .menuItemSec ul{
     margin: 0;
     padding: 0;
-    display: flex;              /* ul ko flex container bana diya */
-    justify-content: space-evenly; /* items ko poori width me spread kar diya */
+    display: flex;
+    justify-content: space-between;
     list-style: none;   
 }
+
 .menuItemSec li{
-    display: inline-block;
-    text-transform: uppercase;
-    padding: 10px;
-    padding: 0;
-    flex: 0;        /* har item ko equal width dega */
-    text-align: center;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
     gap: 5px;
     font-size: 1.4em;
+    flex: 1;
+    text-align: center;
 }
 
 .menuItemSec li a{
     text-decoration: none;
-    color: black;
+    color: #3366FF;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-style: bold;
-  color: #3366FF;  
-  -webkit-text-stroke: 1px #006633;
+    font-style: normal;
+    -webkit-text-stroke: 1px #006633;
 }
 
 .menuItemSec li.home a {
-  color: #006633;        /* Home ka different color */
+    color: #006633;
+}
+
+.menuItemSec li.home{
+    justify-content: left;
 }
 
 .musicnoteIcon{
     width: 25px;
     height: 25px;
     transform: rotate(-9deg);
-
-    /* display: inline-block;
-  vertical-align: middle;
-  margin-left: 5px; */
+    flex-shrink: 0;
 }
 
 .contentno2{
     background-color: #33FFCC;
     border: 3px solid #3366FF;
     border-radius: 4px;
-    display: inline-block;
+    width: 100%;
+    padding: 6px 0px;
+    font-size: 28px;
+    display: flex;
+    font-style: italic !important;
+    justify-content: space-between;
+    letter-spacing: 32px;
+    align-items: center;
 }
+
 .contentno2 p{
     margin: 0;
     padding: 0px;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-style: bold;          /* full line width */
+    font-style: normal;
     color: #3366FF;
-    line-height: 23px;
+    line-height: 1;
+    flex: 1;
+    text-align: center;
+    font-style: italic !important;
 }
 
 .profitword {
     color: #006633 !important;
-    margin: 0px 5px;        /* Home ka different color */
 }
-
-.contentno2 .word {
-    letter-spacing: 25px;
-    font-size: 1.3rem;
-    font-style: italic;
-  -webkit-text-stroke: 1px #006633;
-
-}
-
-/* .contentno2 .wordcenter{
-    margin: 0px 20px;
-} */
-.contentno2 .wordlast{
-    align-items: right;
-    text-align: right;
-}
-
-
 
 .container3{
     width: 100%;
@@ -104,19 +102,255 @@
     color: #3366FF;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-style: bold; 
+    font-style: normal;
     border-radius: 4px;
     text-transform: uppercase;
     text-align: center;
-    line-height: 24px;
+    line-height: 1px;
     padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 .container3 .line1{
     font-size: 41px;
+    line-height: 1;
 }
+
 .container3 .line2{
     font-size: 28px;
+    line-height: 1;
 }
+
 .container3 .line3{
     font-size: 41px;
+    line-height: 1;
+}
+
+/* Responsive scaling - maintaining proportions */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+    .mainLogo{
+        height: 120px;
+    }
+    
+    .menuItemSec{
+        font-size: 24px;
+        line-height: 60px;
+    }
+    
+    .contentno2{
+        font-size: 32px;
+        letter-spacing: 36px;
+    }
+    
+    .container3{
+        height: 116px;
+    }
+    
+    .container3 .line1{
+        font-size: 45px;
+    }
+    
+    .container3 .line2{
+        font-size: 32px;
+    }
+    
+    .container3 .line3{
+        font-size: 45px;
+    }
+    
+    .musicnoteIcon{
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Medium screens (tablets landscape) */
+@media (max-width: 992px) {
+    .mainLogo{
+        height: 90px;
+    }
+    
+    .menuItemSec{
+        font-size: 18px;
+        line-height: 45px;
+    }
+    
+    .menuItemSec li{
+        font-size: 1.2em;
+    }
+    
+    .contentno2{
+        font-size: 22px;
+        letter-spacing: 24px;
+    }
+    
+    .container3{
+        height: 90px;
+    }
+    
+    .container3 .line1{
+        font-size: 32px;
+    }
+    
+    .container3 .line2{
+        font-size: 22px;
+    }
+    
+    .container3 .line3{
+        font-size: 32px;
+    }
+    
+    .musicnoteIcon{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Small screens (tablets portrait) */
+@media (max-width: 768px) {
+    .mainLogo{
+        height: 70px;
+    }
+    
+    .menuItemSec{
+        font-size: 14px;
+        line-height: 35px;
+    }
+    
+    .menuItemSec li{
+        font-size: 1em;
+    }
+    
+    .contentno2{
+        font-size: 18px;
+        letter-spacing: 18px;
+        padding: 4px 0px;
+    }
+    
+    .container3{
+        height: 70px;
+        padding: 3px 0px;
+    }
+    
+    .container3 .line1{
+        font-size: 26px;
+    }
+    
+    .container3 .line2{
+        font-size: 18px;
+    }
+    
+    .container3 .line3{
+        font-size: 26px;
+    }
+    
+    .musicnoteIcon{
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 600px) {
+    .HeaderMain{
+        margin: 10px 0px;
+    }
+    
+    .mainLogo{
+        height: 60px;
+    }
+    
+    .menuItemSec{
+        font-size: 12px;
+        line-height: 30px;
+    }
+    
+    .menuItemSec li{
+        font-size: 0.9em;
+        gap: 3px;
+    }
+    
+    .contentno2{
+        font-size: 14px;
+        letter-spacing: 14px;
+        padding: 3px 0px;
+        border-width: 2px;
+    }
+    
+    .container3{
+        height: 60px;
+        border-width: 3px;
+        padding: 2px 0px;
+    }
+    
+    .container3 .line1{
+        font-size: 22px;
+    }
+    
+    .container3 .line2{
+        font-size: 15px;
+    }
+    
+    .container3 .line3{
+        font-size: 22px;
+    }
+    
+    .musicnoteIcon{
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Very small screens (small phones) */
+@media (max-width: 480px) {
+    .HeaderMain{
+        margin: 8px 0px;
+    }
+    
+    .mainLogo{
+        height: 50px;
+    }
+    
+    .menuItemSec{
+        font-size: 10px;
+        line-height: 25px;
+    }
+    
+    .menuItemSec li{
+        font-size: 0.8em;
+        gap: 2px;
+    }
+    
+    .contentno2{
+        font-size: 12px;
+        letter-spacing: 12px;
+        padding: 2px 0px;
+    }
+    
+    .container3{
+        height: 50px;
+        padding: 1px 0px;
+    }
+    
+    .container3 .line1{
+        font-size: 18px;
+    }
+    
+    .container3 .line2{
+        font-size: 12px;
+    }
+    
+    .container3 .line3{
+        font-size: 18px;
+    }
+    
+    .musicnoteIcon{
+        width: 12px;
+        height: 12px;
+    }
 }
