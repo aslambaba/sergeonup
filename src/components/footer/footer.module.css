@@ -1,7 +1,6 @@
 .FooterMain{
     background-color: #3366FF;
     padding: 20px 40px;
-
 }
 
 .FooterMainSec{
@@ -9,6 +8,17 @@
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
+    align-items: center;
+}
+
+.menuItemSec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuItemSec img{
+    margin: 0px 20px;
 }
 
 .FooterMainSec h1{
@@ -16,13 +26,108 @@
     font-weight: 800;
     color: #FFFFCC;
     -webkit-text-stroke: 2px #006633;
+    margin: 0;
 }
 
 .FooterMain h3{
     text-align: center;
-    font-size: 38px;
+    font-size: 40px;
     font-weight: 800;
     color: #FFFFCC;
     -webkit-text-stroke: 2px #006633;
+    margin: 0;
+}
 
+/* Tablet - 75% scale */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .FooterMain {
+        padding: 15px 30px; /* 75% of 20px 40px */
+    }
+    
+    .FooterMainSec h1 {
+        font-size: 58px; /* 75% of 78px */
+        -webkit-text-stroke: 1.5px #006633; /* 75% of 2px */
+    }
+    
+    .FooterMain h3 {
+        font-size: 28px; /* 75% of 38px */
+        -webkit-text-stroke: 1.5px #006633; /* 75% of 2px */
+    }
+    
+    .menuItemSec img {
+        height: 52px; /* 75% of 70px */
+        width: 52px; /* 75% of 70px */
+        margin: 0px 15px; /* 75% of 20px */
+    }
+}
+
+/* Mobile Landscape - 60% scale */
+@media (max-width: 768px) and (min-width: 481px) {
+    .FooterMain {
+        padding: 12px 24px; /* 60% of 20px 40px */
+    }
+    
+    .FooterMainSec h1 {
+        font-size: 47px; /* 60% of 78px */
+        -webkit-text-stroke: 1.2px #006633; /* 60% of 2px */
+    }
+    
+    .FooterMain h3 {
+        font-size: 23px; /* 60% of 38px */
+        -webkit-text-stroke: 1.2px #006633; /* 60% of 2px */
+    }
+    
+    .menuItemSec img {
+        height: 42px; /* 60% of 70px */
+        width: 42px; /* 60% of 70px */
+        margin: 0px 12px; /* 60% of 20px */
+    }
+}
+
+/* Mobile Portrait - 45% scale */
+@media (max-width: 480px) and (min-width: 361px) {
+    .FooterMain {
+        padding: 9px 18px; /* 45% of 20px 40px */
+    }
+    
+    .FooterMainSec h1 {
+        font-size: 35px; /* 45% of 78px */
+        -webkit-text-stroke: 1px #006633; /* 45% of 2px */
+    }
+    
+    .FooterMain h3 {
+        font-size: 17px; /* 45% of 38px */
+        -webkit-text-stroke: 1px #006633; /* 45% of 2px */
+        line-height: 1.2;
+    }
+    
+    .menuItemSec img {
+        height: 26px; /* 45% of 70px */
+        width: 26px; /* 45% of 70px */
+        margin: 0px 9px; /* 45% of 20px */
+    }
+}
+
+/* Extra Small Mobile - 35% scale */
+@media (max-width: 360px) {
+    .FooterMain {
+        padding: 7px 14px; /* 35% of 20px 40px */
+    }
+    
+    .FooterMainSec h1 {
+        font-size: 27px; /* 35% of 78px */
+        -webkit-text-stroke: 0.7px #006633; /* 35% of 2px */
+    }
+    
+    .FooterMain h3 {
+        font-size: 13px; /* 35% of 38px */
+        -webkit-text-stroke: 0.7px #006633; /* 35% of 2px */
+        line-height: 1.3;
+    }
+    
+    .menuItemSec img {
+        height: 22px; /* 35% of 70px */
+        width: 22px; /* 35% of 70px */
+        margin: 0px 7px; /* 35% of 20px */
+    }
 }

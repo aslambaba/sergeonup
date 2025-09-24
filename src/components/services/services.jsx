@@ -21,8 +21,8 @@ export default function Services() {
         <Container>
           <Row>
             <Col lg={12}>
-              <h4 style={{ color: "#33FFCC" }}>
-                SO, WHAT CAN WE DO FOR Y O U ?
+              <h4 className={styles.serviceDailog}>
+                SO, WHAT CAN WE DO FOR YOU ?
               </h4>
             </Col>
             <Col lg={3} md={6} sm={12} xs={12}>

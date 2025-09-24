@@ -6,6 +6,14 @@
     padding-bottom: 80px;
     background-color: #3366FF;
 }
+
+.serviceDailog{
+    color: #33FFCC;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
 .mainLandingBody h4{
     text-align: center;
     padding-top: 9px;
@@ -56,3 +64,11 @@
     margin: 0px 5px;
 }
 
+@media (max-width: 480px) {
+    .serviceDailog{
+        color: #33FFCC;
+        font-size: 36px;
+        font-weight: 900;
+    }
+
+}

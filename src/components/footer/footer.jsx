@@ -2,11 +2,18 @@ import React from "react";
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./footer.module.css";
+import FB from "./images/facebook.jpg";
+import INSTA from "./images/instagram.jpg";
+import LI from "./images/linkedin.jpg";
+import PINT from "./images/pintrest.jpg";
+import TOP from "./images/top.jpg";
+
+
 
 export default function Footer() {
   return (
     <Container fluid className="p-0">
-      <div  className={styles.FooterMain}>
+      <div className={styles.FooterMain}>
         <Row>
           <div className={styles.FooterMainSec}>
             {/* Logo */}
@@ -17,7 +24,11 @@ export default function Footer() {
             {/* Menu Section */}
             <Col lg={8}>
               <div className={styles.menuItemSec}>
-                <Row></Row>
+                <Image src={FB} height={70} width={70} alt="Logo" />
+                <Image src={INSTA} height={70} width={70} alt="Logo" />
+                <Image src={LI} height={70} width={70} alt="Logo" />
+                <Image src={PINT} height={70} width={70} alt="Logo" />
+                <Image src={TOP} height={70} width={70} alt="Logo" />
               </div>
             </Col>
 
