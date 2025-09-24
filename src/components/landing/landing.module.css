@@ -4,6 +4,7 @@
     color: #3366FF;
     padding: 18px;
 }
+
 .mainLandingBody2{
     text-align: left;
     padding-top: 0px !important;
@@ -12,37 +13,258 @@
 
 .mainLandingContainer, .mainLandingContainer2{
     background-color: #33FFCC;
-    padding: 180px 0px;
+    padding: 180px 20px;
     border-radius: 20px;
 }
 
+.mainLandingContainer h3{
+  font-weight: 900;
+  font-size: 58px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.mainLandingContainer h4{
+  font-size: 46px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+/* Individual word styling for desktop */
+.word1, .word2, .word3, .word4, .word5, .word6, .word7 {
+  display: inline;
+  color: #3366FF !important;
+}
+
+.mainLandingContainer2{
+    padding: 30px 20px;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.mainLandingBody2 p{
+    margin: 20px 0px;
+    line-height: 1.4;
+}
+
+.mainLandingBody h3{
+    font-size: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.mainLandingBody h4{
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Desktop styles */
 @media (min-width: 1024px) {
   .mainLandingContainer2 {
     height: 550px;
   }
 }
 
-.mainLandingContainer2{
-    padding: 10px 10px;
-    font-size: 24px;
-    font-family: "Poppins", sans-serif;
-  font-weight: 500;
+/* Tablet styles */
+@media (max-width: 1023px) and (min-width: 769px) {
+  .mainLandingContainer {
+    padding: 120px 30px;
+  }
+  
+  .mainLandingContainer h3{
+    font-size: 48px;
+  }
+  
+  .mainLandingContainer h4{
+    font-size: 38px;
+  }
+  
+  .mainLandingContainer2{
+    padding: 25px 30px;
+    font-size: 22px;
+  }
 }
 
-.mainLandingBody2 p{
-    margin: 20px 0px;
+/* Mobile styles */
+@media (max-width: 768px) {
+  .mainLandingBody, .mainLandingBody2{
+    padding: 12px;
+  }
+  
+  .mainLandingContainer {
+    padding: 80px 20px;
+    border-radius: 15px;
+  }
+  
+  .mainLandingContainer h3{
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+  
+  .mainLandingContainer h4{
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.3;
+    opacity: 0.9;
+  }
+  
+  .mainLandingContainer2{
+    padding: 20px 15px;
+    font-size: 18px;
+    border-radius: 15px;
+    line-height: 1.5;
+  }
+  
+  .mainLandingBody2 p{
+    margin: 15px 0px;
+  }
+  
+  /* Mobile word styling - each word on new line */
+  .word1, .word2, .word3, .word4, .word5, .word6, .word7 {
+    display: block;
+    width: 100%;
+  }
+  
+  /* Individual word sizes for mobile */
+  .word1 { /* SURGEONS */
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 5px;
+  }
+  
+  .word2 { /* are */
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .word3 { /* HEROES! */
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  
+  .word4 { /* They */
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 3px;
+    text-transform: lowercase;
+
+  }
+  
+  .word5 { /* transform */
+    font-size: 48px;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+
+  }
+  
+  .word6 { /* people's */
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+
+  }
+  
+  .word7 { /* lives. */
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+  }
 }
 
-.mainLandingBody h3{
-    font-size: 50px;
-    font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .mainLandingBody, .mainLandingBody2{
+    padding: 8px;
+  }
+  
+  .mainLandingContainer {
+    padding: 30px 15px;
+    padding-top: 40px;
+    border-radius: 12px;
+  }
+  
+  .mainLandingContainer h3{
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  
+  .mainLandingContainer h4{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.3;
+    opacity: 0.85;
+  }
+  
+  .mainLandingContainer2{
+    padding: 15px 12px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+  
+  .mainLandingBody2 p{
+    margin: 12px 0px;
+  }
+  
+  /* Small mobile word sizes */
+  .word1 { /* SURGEONS */
+    font-size: 54px;
+    margin-bottom: 4px;
+  }
+  
+  .word2 { /* are */
+    font-size: 52px;
+    margin-bottom: 4px;
+  }
+  
+  .word3 { /* HEROES! */
+    font-size: 64px;
+    margin-bottom: 18px;
+  }
+  
+  .word4 { /* They */
+    font-size: 42px;
+    margin-bottom: 2px;
+    text-transform: lowercase;
+    margin-top: 60px;
 
-.mainLandingBody h4{
-    font-size: 30px;
-    font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+  }
+  
+  .word5 { /* transform */
+    font-size: 48px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+
+  }
+  
+  .word6 { /* people's */
+    font-size: 66px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+
+  }
+  
+  .word7 { /* lives. */
+    font-size: 110px;
+    text-transform: uppercase;
+
+  }
 }

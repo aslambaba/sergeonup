@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./header.module.css";
 import MainLogo from "./images/logo.jpg";
+import BootAchat from "./images/bookAchat.png";
+import ProfitNF from "./images/profitornofee.png";
 import MainLogo2 from "./images/musicnote.png";
 
 export default function Header() {
@@ -49,11 +51,8 @@ export default function Header() {
                   </ul>
                 </Col>
                 <Col lg={12}>
-                  <div className={styles.contentno2}>
-                    <p className={styles.profitword}>PROFIT</p>
-                    <p>OR</p>
-                    <p>NO</p>
-                    <p>FEE</p>
+                  <div className={styles.conatinerNoFee}>
+                    <Image src={ProfitNF} width={"70%"} alt="Logo" />
                   </div>
                 </Col>
               </Row>
@@ -62,11 +61,12 @@ export default function Header() {
 
           {/* Book a Chat Section */}
           <Col lg={2} md={2} sm={2} xs={2} className="px-1">
-            <div className={styles.container3}>
-              <span className={styles.line1}>Book</span>
-              <span className={styles.line2}>A</span>
-              <span className={styles.line3}>Chat</span>
-            </div>
+            <Image
+              className={styles.mainLogo}
+              src={BootAchat}
+              alt="Logo"
+              fluid
+            />
           </Col>
 
           {/* <Col lg={2}></Col> */}

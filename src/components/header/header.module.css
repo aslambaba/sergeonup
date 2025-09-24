@@ -63,72 +63,6 @@
     flex-shrink: 0;
 }
 
-.contentno2{
-    background-color: #33FFCC;
-    border: 3px solid #3366FF;
-    border-radius: 4px;
-    width: 100%;
-    padding: 6px 0px;
-    font-size: 28px;
-    display: flex;
-    font-style: italic !important;
-    justify-content: space-between;
-    letter-spacing: 32px;
-    align-items: center;
-}
-
-.contentno2 p{
-    margin: 0;
-    padding: 0px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: #3366FF;
-    line-height: 1;
-    flex: 1;
-    text-align: center;
-    font-style: italic !important;
-}
-
-.profitword {
-    color: #006633 !important;
-}
-
-.container3{
-    width: 100%;
-    height: 110px;
-    background-color: #CCFFFF;
-    border: 5px solid #3366FF;
-    color: #3366FF;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    border-radius: 4px;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1px;
-    padding: 5px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.container3 .line1{
-    font-size: 41px;
-    line-height: 1;
-}
-
-.container3 .line2{
-    font-size: 28px;
-    line-height: 1;
-}
-
-.container3 .line3{
-    font-size: 41px;
-    line-height: 1;
-}
-
 /* Responsive scaling - maintaining proportions */
 
 /* Large screens (desktops) */
@@ -140,27 +74,6 @@
     .menuItemSec{
         font-size: 24px;
         line-height: 60px;
-    }
-    
-    .contentno2{
-        font-size: 32px;
-        letter-spacing: 36px;
-    }
-    
-    .container3{
-        height: 116px;
-    }
-    
-    .container3 .line1{
-        font-size: 45px;
-    }
-    
-    .container3 .line2{
-        font-size: 32px;
-    }
-    
-    .container3 .line3{
-        font-size: 45px;
     }
     
     .musicnoteIcon{
@@ -184,27 +97,6 @@
         font-size: 1.2em;
     }
     
-    .contentno2{
-        font-size: 22px;
-        letter-spacing: 24px;
-    }
-    
-    .container3{
-        height: 90px;
-    }
-    
-    .container3 .line1{
-        font-size: 32px;
-    }
-    
-    .container3 .line2{
-        font-size: 22px;
-    }
-    
-    .container3 .line3{
-        font-size: 32px;
-    }
-    
     .musicnoteIcon{
         width: 20px;
         height: 20px;
@@ -224,29 +116,6 @@
     
     .menuItemSec li{
         font-size: 1em;
-    }
-    
-    .contentno2{
-        font-size: 18px;
-        letter-spacing: 18px;
-        padding: 4px 0px;
-    }
-    
-    .container3{
-        height: 70px;
-        padding: 3px 0px;
-    }
-    
-    .container3 .line1{
-        font-size: 26px;
-    }
-    
-    .container3 .line2{
-        font-size: 18px;
-    }
-    
-    .container3 .line3{
-        font-size: 26px;
     }
     
     .musicnoteIcon{
@@ -275,31 +144,6 @@
         gap: 3px;
     }
     
-    .contentno2{
-        font-size: 14px;
-        letter-spacing: 14px;
-        padding: 3px 0px;
-        border-width: 2px;
-    }
-    
-    .container3{
-        height: 60px;
-        border-width: 3px;
-        padding: 2px 0px;
-    }
-    
-    .container3 .line1{
-        font-size: 22px;
-    }
-    
-    .container3 .line2{
-        font-size: 15px;
-    }
-    
-    .container3 .line3{
-        font-size: 22px;
-    }
-    
     .musicnoteIcon{
         width: 14px;
         height: 14px;
@@ -326,31 +170,19 @@
         gap: 2px;
     }
     
-    .contentno2{
-        font-size: 12px;
-        letter-spacing: 12px;
-        padding: 2px 0px;
-    }
-    
-    .container3{
-        height: 50px;
-        padding: 1px 0px;
-    }
-    
-    .container3 .line1{
-        font-size: 18px;
-    }
-    
-    .container3 .line2{
-        font-size: 12px;
-    }
-    
-    .container3 .line3{
-        font-size: 18px;
-    }
-    
     .musicnoteIcon{
         width: 12px;
         height: 12px;
     }
+}
+
+.conatinerNoFee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.conatinerNoFee img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

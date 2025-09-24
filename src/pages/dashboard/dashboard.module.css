@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #f8f9fa;
 }
 
 .dashboardContainer {
@@ -20,21 +21,31 @@
   font-weight: 600;
   padding: 8px 20px;
   border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .newPostBtn:hover {
   background-color: #004d26 !important;
+  transform: translateY(-1px);
 }
 
 .blogCard {
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.blogCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
 }
 
 .blogImage {
   height: 200px;
   object-fit: cover;
+  width: 100%;
 }
 
 .cardButtons {
@@ -44,38 +55,152 @@
 }
 
 .blogModal .modal-content {
-  border-radius: 10px;
-  background-color: #ccffff;
+  border-radius: 15px;
+  background-color: #f8f9fa;
 }
 
 .inputField {
-  border-radius: 6px;
-  padding: 10px;
+  border-radius: 8px;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  transition: border-color 0.3s ease;
+}
+
+.inputField:focus {
+  border-color: #006633;
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.25);
 }
 
 .editorToolbar {
   display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.editorToolbar button {
+  border-radius: 4px !important;
+  transition: all 0.2s ease;
+}
+
+.editorToolbar button:hover {
+  background-color: #006633 !important;
+  color: white !important;
 }
 
 .editorArea {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 12px;
-  min-height: 300px;
-  background: #fff;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+  min-height: 400px;
+  background: white;
   outline: none;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  transition: border-color 0.3s ease;
+}
+
+.editorArea:focus {
+  border-color: #006633;
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.25);
+}
+
+.editorArea h1, .editorArea h2, .editorArea h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #006633;
+}
+
+.editorArea ul, .editorArea ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.editorArea p {
+  margin-bottom: 15px;
 }
 
 .postBtn {
   background-color: #006633 !important;
   border: none !important;
   font-weight: 600;
-  padding: 10px 25px;
-  border-radius: 6px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .postBtn:hover {
   background-color: #004d26 !important;
+  transform: translateY(-1px);
+}
+
+.postBtn:disabled {
+  opacity: 0.7;
+  transform: none;
+}
+
+/* Loading and empty states */
+.loadingSpinner {
+  color: #006633;
+}
+
+.emptyState {
+  padding: 60px 20px;
+  text-align: center;
+  color: #6c757d;
+}
+
+.emptyState h5 {
+  color: #006633;
+  margin-bottom: 15px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .dashboardContainer {
+    padding: 20px 0;
+  }
+  
+  .editorToolbar {
+    gap: 6px;
+    padding: 8px;
+  }
+  
+  .editorToolbar button {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .editorArea {
+    min-height: 300px;
+    padding: 12px;
+  }
+  
+  .cardButtons {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .cardButtons button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .newPostBtn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .blogCard {
+    margin-bottom: 20px;
+  }
 }
