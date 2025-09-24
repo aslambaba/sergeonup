@@ -4,6 +4,7 @@
     text-align: center;
     color: #3366ff;
     font-weight: 800 !important;
+    font-family: 'Poppins', sans-serif;
 }
 
 .BlogsMainSec{
@@ -17,15 +18,224 @@
     text-align: center;
     -webkit-text-stroke: 1px #3366ff;
     text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
 .BlogsSec{
     padding: 20px;
     border: 2px solid #006633;
-    border-radius: 4px;
-text-align: center;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.BlogsSec h4{
+
+.BlogsSec:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 102, 51, 0.15);
+}
+
+.BlogsSec h4,
+.BlogsSec h6{
     color: #006633;
     font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.BlogsSec img {
+    border-radius: 8px;
+    margin-top: 15px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Featured blog titles */
+.BlogsMain h3 {
+    color: #3366ff;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .BlogsMain h2 {
+        font-size: 42px;
+    }
+    
+    .BlogsSec {
+        padding: 18px;
+    }
+    
+    .BlogsSec img {
+        max-width: 100%;
+        height: 300px;
+    }
+    
+    .BlogsMain h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) and (min-width: 481px) {
+    .BlogsMainSec {
+        margin: 15px 0;
+    }
+    
+    .BlogsMain h2 {
+        font-size: 36px;
+        margin-bottom: 25px;
+        -webkit-text-stroke: 0.8px #3366ff;
+    }
+    
+    .BlogsSec {
+        padding: 15px;
+        border-width: 1.5px;
+    }
+    
+    .BlogsMain h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    
+    .BlogsSec h4 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    .BlogsSec h6 {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+    
+    /* Featured blog images - responsive */
+    .BlogsSec img {
+        max-width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    .BlogsMainSec {
+        margin: 12px 0;
+    }
+    
+    .BlogsMain h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        -webkit-text-stroke: 0.7px #3366ff;
+    }
+    
+    .BlogsSec {
+        padding: 12px;
+        border-width: 1.5px;
+        border-radius: 6px;
+    }
+    
+    .BlogsMain h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+    
+    .BlogsSec h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+    
+    .BlogsSec h6 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+    
+    /* Featured blog images - smaller */
+    .BlogsSec img {
+        max-width: 100%;
+        height: 120px;
+        object-fit: cover;
+        margin-top: 10px;
+    }
+    
+    /* Small blog images - even smaller */
+    .BlogsSec:has(h6) img {
+        height: 80px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    .BlogsMainSec {
+        margin: 10px 0;
+    }
+    
+    .BlogsMain h2 {
+        font-size: 28px;
+        margin-bottom: 18px;
+        -webkit-text-stroke: 0.6px #3366ff;
+    }
+    
+    .BlogsSec {
+        padding: 10px;
+        border-width: 1px;
+        border-radius: 5px;
+    }
+    
+    .BlogsMain h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        line-height: 1.2;
+    }
+    
+    .BlogsSec h4 {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+    
+    .BlogsSec h6 {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    
+    /* Featured blog images - very small */
+    .BlogsSec img {
+        max-width: 100%;
+        height: 100px;
+        object-fit: cover;
+        margin-top: 8px;
+    }
+    
+    /* Small blog images - tiny */
+    .BlogsSec:has(h6) img {
+        height: 70px;
+    }
+    
+    .BlogsSec .mt-2 small {
+        font-size: 0.75rem;
+    }
+}
+
+/* Responsive container padding */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }

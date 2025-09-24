@@ -40,9 +40,18 @@ export default function Blogs() {
     return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
   };
 
-  // Smart Image Component with error handling
-  const BlogImage = ({ src, alt, height, width, className = "" }) => {
+  // Responsive Image Component with proper sizing
+  const BlogImage = ({ src, alt, isFeatured = false, className = "" }) => {
     const [imgError, setImgError] = useState(false);
+
+    const imageStyle = {
+      objectFit: 'cover',
+      borderRadius: '8px',
+      width: '100%',
+      height: '300px',
+      maxWidth: '100%',
+      // CSS will handle responsive heights
+    };
 
     // If external URL and not error, use regular img tag
     if (src && src.includes('supabase.co') && !imgError) {
@@ -50,10 +59,8 @@ export default function Blogs() {
         <img
           src={src}
           alt={alt}
-          height={height}
-          width={width}
-          className={className}
-          style={{ objectFit: 'cover', borderRadius: '8px' }}
+          className={`${className} ${isFeatured ? 'featured-img' : 'small-img'}`}
+          style={imageStyle}
           onError={() => setImgError(true)}
         />
       );
@@ -63,11 +70,11 @@ export default function Blogs() {
     return (
       <Image
         src={imgError || !src ? blogImg : src}
-        height={height}
-        width={width}
+        width={isFeatured ? 380 : 180}
+        height={isFeatured ? 200 : 100}
         alt={alt}
-        className={className}
-        style={{ objectFit: 'cover' }}
+        className={`${className} ${isFeatured ? 'featured-img' : 'small-img'}`}
+        style={imageStyle}
         onError={() => setImgError(true)}
       />
     );
@@ -127,7 +134,7 @@ export default function Blogs() {
           {featuredBlogs.length > 0 && (
             <Row className="mb-4">
               {featuredBlogs.map((blog) => (
-                <Col lg={6} key={blog.id} className="mb-3">
+                <Col lg={6} md={6} sm={12} key={blog.id} className="mb-3">
                   <Link href={`/blogs/${blog.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <div style={{ cursor: 'pointer' }}>
                       <h3>{blog.title}</h3>
@@ -135,15 +142,9 @@ export default function Blogs() {
                         <h4>{extractTextFromHTML(blog.body, 60)}</h4>
                         <BlogImage 
                           src={blog.image_url}
-                          height={200}
-                          width={380}
                           alt={blog.title}
+                          isFeatured={true}
                         />
-                        {/* <div className="mt-2">
-                          <small className="text-muted">
-                            Published: {new Date(blog.created_at).toLocaleDateString()}
-                          </small>
-                        </div> */}
                       </div>
                     </div>
                   </Link>
@@ -152,7 +153,7 @@ export default function Blogs() {
               
               {/* Fill empty space if only 1 featured blog */}
               {featuredBlogs.length === 1 && (
-                <Col lg={6}>
+                <Col lg={6} md={6} sm={12}>
                   <div className="text-center text-muted py-5">
                     <p>More featured content coming soon!</p>
                   </div>
@@ -173,9 +174,8 @@ export default function Blogs() {
                         <h6>{extractTextFromHTML(blog.body, 40)}</h6>
                         <BlogImage 
                           src={blog.image_url}
-                          height={100}
-                          width={180}
                           alt={blog.title}
+                          isFeatured={false}
                         />
                         <div className="mt-2">
                           <small className="text-muted">
