@@ -75,7 +75,7 @@ export default function Login() {
       login(adminInfo);
       
       // Redirect to dashboard
-      router.push('/admin/dashboard');
+      router.push('/dashboard');
 
     } catch (err) {
       setError(err.message);
