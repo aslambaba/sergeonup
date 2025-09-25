@@ -387,7 +387,6 @@ export default function Service() {
             </div>
           </div>
         </Container>
-        <Footer/>
       </div>
     );
 }

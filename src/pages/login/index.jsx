@@ -86,7 +86,6 @@ export default function Login() {
 
   return (
     <div className={styles.loginMainSection}>
-      <Header />
 
       <Container className={styles.loginContainer}>
         <Row className="justify-content-center">
@@ -153,7 +152,6 @@ export default function Login() {
         </Row>
       </Container>
 
-      <Footer />
     </div>
   );
 }

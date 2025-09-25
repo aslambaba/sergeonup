@@ -9,7 +9,6 @@ import Footer from "@/components/footer/footer";
 export default function Privacy(){
     return (
       <div className={styles.TosMainSection}>
-        <Header />
         <h1>PRIVACY</h1>
 
         <div className={styles.TosTextContainer}>
@@ -219,7 +218,6 @@ export default function Privacy(){
             <p className="last-updated">LAST UPDATED: Saturday 31 May 2025</p>
           </div>
         </div>
-        <Footer/>
       </div>
     );
 }

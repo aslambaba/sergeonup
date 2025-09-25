@@ -50,14 +50,12 @@ export default function BlogDetail() {
   if (loading) {
     return (
       <div className={styles.blogDetailMain}>
-        <Header />
         <Container className="py-5">
           <div className="text-center">
             <Spinner animation="border" variant="primary" />
             <p className="mt-3">Loading blog...</p>
           </div>
         </Container>
-        <Footer />
       </div>
     );
   }
@@ -65,7 +63,6 @@ export default function BlogDetail() {
   if (error || !blog) {
     return (
       <div className={styles.blogDetailMain}>
-        <Header />
         <Container className="py-5">
           <Alert variant="danger" className="text-center">
             <h4>Blog not found</h4>
@@ -75,14 +72,12 @@ export default function BlogDetail() {
             </Button>
           </Alert>
         </Container>
-        <Footer />
       </div>
     );
   }
 
   return (
     <div className={styles.blogDetailMain}>
-      <Header />
       
       <div className={styles.blogDetailContainer}>
         <Container>
@@ -177,7 +172,6 @@ export default function BlogDetail() {
         </Container>
       </div>
       
-      <Footer />
     </div>
   );
 }

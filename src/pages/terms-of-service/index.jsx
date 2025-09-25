@@ -9,7 +9,6 @@ import Footer from "@/components/footer/footer";
 export default function TOS(){
     return (
       <div className={styles.TosMainSection}>
-        <Header />
         <h1>Terms of Service (TOS)</h1>
 
         <div className={styles.TosTextContainer}>
@@ -230,7 +229,6 @@ export default function TOS(){
             <p className="last-updated">LAST UPDATED: Saturday 31 May 2025</p>
           </div>
         </div>
-        <Footer />
       </div>
     );
 }

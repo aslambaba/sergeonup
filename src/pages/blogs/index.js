@@ -83,12 +83,10 @@ export default function Blogs() {
   if (loading) {
     return (
       <div className={styles.BlogsMain}>
-        <Header />
         <div className="text-center py-5">
           <Spinner animation="border" variant="primary" />
           <p className="mt-3">Loading blogs...</p>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -96,12 +94,10 @@ export default function Blogs() {
   if (error) {
     return (
       <div className={styles.BlogsMain}>
-        <Header />
         <div className="text-center py-5">
           <h4 className="text-danger">Error: {error}</h4>
           <p>Unable to load blogs. Please try again later.</p>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -109,13 +105,11 @@ export default function Blogs() {
   if (blogs.length === 0) {
     return (
       <div className={styles.BlogsMain}>
-        <Header />
         <h2>Blog</h2>
         <div className="text-center py-5">
           <h4>No blogs available</h4>
           <p className="text-muted">Check back soon for new content!</p>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -126,7 +120,6 @@ export default function Blogs() {
 
   return (
     <div className={styles.BlogsMain}>
-      <Header />
       <h2>Blog</h2>
       <div className={styles.BlogsMainSec}>
         <Container>
@@ -211,7 +204,6 @@ export default function Blogs() {
           )}
         </Container>
       </div>
-      <Footer />
     </div>
   );
 }

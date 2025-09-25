@@ -9,7 +9,6 @@ import Footer from "@/components/footer/footer";
 export default function Contact() {
     return (
       <div className={styles.contactMainSection}>
-        <Header />
         <h2>Contact</h2>
         <h4>SURGEONS: Robin is here for you 24/7, if need be, on WhatsApp</h4>
 
@@ -84,7 +83,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
 }

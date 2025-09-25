@@ -12,7 +12,6 @@ import Link from "next/link";
 export default function AboutPage(){
     return (
       <div className={styles.AboutMainContainer}>
-        <Header />
         <h2>ABOUT</h2>
         <Container fluid>
           <Row>
@@ -70,7 +69,6 @@ export default function AboutPage(){
             </Col>
           </Row>
         </Container>
-        <Footer />
       </div>
     );
 }
