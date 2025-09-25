@@ -19,6 +19,14 @@
     font-weight: 600;
 }
 
+.Contact3ContentAlignment0{
+    display: flex;
+    flex-direction: row;
+    line-height: 1.5;
+    justify-content: center;
+    align-items: center;
+}
+
 .Contact3ContentAlignment {
     display: flex;
     flex-direction: row;
@@ -204,9 +212,11 @@
         border-radius: 0px;
     }
 
+    .Contact3ContentAlignment0{
+        display: none;
+    }
     .Contact3ContentAlignment{
         flex-direction: column;
-        display: none;
     }
     .Contact3ContentAlignment2{
         display: block;

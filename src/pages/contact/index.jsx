@@ -57,7 +57,7 @@ export default function Contact() {
             className={styles.contactTextSec1}
             style={{ marginBottom: "15px" }}
           >
-            <div className={styles.Contact3ContentAlignment}>
+            <div className={styles.Contact3ContentAlignment0}>
               <h5>
                 <span style={{ color: "#006633" }}>W H A T ‘ S Y O U R</span>{" "}
                 <br /> What things do you like about our Website? What do you
