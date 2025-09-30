@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.welcomeModal .modal-content {
+  border-radius: 20px;
+  border: 3px solid #006633;
+  overflow: hidden;
+}
+
+.modalBody {
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.welcomeContent {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.musicIcon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.title {
+  color: #006633;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  -webkit-text-stroke: 1px #3366ff;
+}
+
+.message {
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.yesButton, .noButton {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.yesButton {
+  background: linear-gradient(135deg, #006633, #00994d);
+  border: none;
+}
+
+.yesButton:hover {
+  background: linear-gradient(135deg, #00994d, #006633);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 102, 51, 0.3);
+}
+
+.noButton {
+  border: 2px solid #6c757d;
+  color: #6c757d;
+}
+
+.noButton:hover {
+  background-color: #6c757d;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+  .modalBody {
+    padding: 30px 20px;
+  }
+  
+  .musicIcon {
+    font-size: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  
+  .message {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .yesButton, .noButton {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

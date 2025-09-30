@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.pdfBlogsMain {
+  text-align: center;
+  color: #3366ff;
+  font-weight: 800 !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+.pdfBlogsContainer {
+  margin: 20px 0px;
+}
+
+.mainTitle {
+  color: #006633;
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+  -webkit-text-stroke: 1px #3366ff;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.blogCard {
+  padding: 20px;
+  border: 2px solid #006633;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blogCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 102, 51, 0.15);
+}
+
+.blogCard h4,
+.blogCard h6 {
+  color: #006633;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+/* Blog Image Containers */
+.blogImageLarge {
+  border-radius: 8px;
+  margin-top: 15px;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  background: #f8f9fa;
+}
+
+.blogImageSmall {
+  border-radius: 8px;
+  margin-top: 10px;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  background: #f8f9fa;
+}
+
+/* PDF Preview as Image - Fixed to show only first page */
+.pdfPreview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.previewFrame {
+  width: 100%;
+  height: 850px;
+  border: none;
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(1);
+  transform-origin: top center;
+}
+
+.pdfBlogsMain h3 {
+  color: #3366ff;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .mainTitle {
+    font-size: 42px;
+  }
+  
+  .blogCard {
+    padding: 18px;
+  }
+  
+  .blogImageLarge {
+    height: 280px;
+  }
+  
+  .blogImageSmall {
+    height: 160px;
+  }
+  
+  .pdfBlogsMain h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) and (min-width: 481px) {
+  .pdfBlogsContainer {
+    margin: 15px 0;
+  }
+  
+  .mainTitle {
+    font-size: 36px;
+    margin-bottom: 25px;
+    -webkit-text-stroke: 0.8px #3366ff;
+  }
+  
+  .blogCard {
+    padding: 15px;
+    border-width: 1.5px;
+  }
+  
+  .pdfBlogsMain h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .blogCard h4 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  
+  .blogCard h6 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  
+  .blogImageLarge {
+    height: 200px;
+  }
+  
+  .blogImageSmall {
+    height: 150px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .pdfBlogsContainer {
+    margin: 12px 0;
+  }
+  
+  .mainTitle {
+    font-size: 32px;
+    margin-bottom: 20px;
+    -webkit-text-stroke: 0.7px #3366ff;
+  }
+  
+  .blogCard {
+    padding: 12px;
+    border-width: 1.5px;
+    border-radius: 6px;
+  }
+  
+  .pdfBlogsMain h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  
+  .blogCard h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .blogCard h6 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  
+  .blogImageLarge {
+    height: 180px;
+  }
+  
+  .blogImageSmall {
+    height: 120px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .pdfBlogsContainer {
+    margin: 10px 0;
+  }
+  
+  .mainTitle {
+    font-size: 28px;
+    margin-bottom: 18px;
+    -webkit-text-stroke: 0.6px #3366ff;
+  }
+  
+  .blogCard {
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 5px;
+  }
+  
+  .pdfBlogsMain h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  
+  .blogCard h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  
+  .blogCard h6 {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  
+  .blogImageLarge {
+    height: 150px;
+  }
+  
+  .blogImageSmall {
+    height: 100px;
+  }
+  
+  .blogCard .mt-2 small {
+    font-size: 0.75rem;
+  }
+}
+
+/* Responsive container padding */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

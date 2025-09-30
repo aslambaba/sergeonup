@@ -1,422 +1,342 @@
-import { useState, useRef, useEffect } from "react";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
-import styles from "./dashboard.module.css";
+import { useState, useEffect } from 'react';
+import { Container, Row, Col, Card, Button, Table, Modal, Form, Spinner, Alert } from 'react-bootstrap';
+import { pdfBlogService } from '@/lib/pdfBlogService';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/router';
-import ProtectedRoute from '@/components/ProtectedRoute';
-import { blogService } from '@/lib/blogService';
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Card,
-  Modal,
-  Form,
-  Alert,
-  Spinner,
-  Badge
-} from "react-bootstrap";
 
-export default function Dashboard() {
-  const { adminData, logout } = useAuth();
+export default function PdfBlogManagement() {
+  const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
-  const editorRef = useRef(null);
+  
+  const [pdfBlogs, setPdfBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [editingPdf, setEditingPdf] = useState(null);
+  const [formData, setFormData] = useState({
+    title: '',
+    pdfFile: null
+  });
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
-  // State management
-  const [show, setShow] = useState(false);
-  const [editMode, setEditMode] = useState(false);
-  const [currentBlogId, setCurrentBlogId] = useState(null);
-  const [title, setTitle] = useState("");
-  const [image, setImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [pageLoading, setPageLoading] = useState(true);
-  const [alert, setAlert] = useState({ show: false, message: '', variant: 'success' });
-
-  // Load blogs on component mount
   useEffect(() => {
-    loadBlogs();
-  }, []);
-
-  const loadBlogs = async () => {
-    setPageLoading(true);
-    const result = await blogService.getAllBlogs();
-    if (result.success) {
-      setBlogs(result.data);
-    } else {
-      showAlert('Failed to load blogs: ' + result.error, 'danger');
+    if (!isLoading && !isAuthenticated) {
+      router.push('/admin/login');
+    } else if (isAuthenticated) {
+      loadPdfBlogs();
     }
-    setPageLoading(false);
-  };
+  }, [isAuthenticated, isLoading, router]);
 
-  const showAlert = (message, variant = 'success') => {
-    setAlert({ show: true, message, variant });
-    setTimeout(() => setAlert({ show: false, message: '', variant: 'success' }), 5000);
-  };
-
-  const handleLogout = () => {
-    logout();
-    router.push('/');
-  };
-
-  const handleClose = () => {
-    setShow(false);
-    setEditMode(false);
-    setCurrentBlogId(null);
-    setTitle("");
-    setImage(null);
-    setImagePreview(null);
-    if (editorRef.current) {
-      editorRef.current.innerHTML = "Start writing your blog...";
-    }
-  };
-
-  const handleShow = () => setShow(true);
-
-  const handleEdit = (blog) => {
-    setEditMode(true);
-    setCurrentBlogId(blog.id);
-    setTitle(blog.title);
-    setImagePreview(blog.image_url);
-    if (editorRef.current) {
-      editorRef.current.innerHTML = blog.body;
-    }
-    setShow(true);
-  };
-
-  const handleDelete = async (blogId) => {
-    if (!confirm('Are you sure you want to delete this blog?')) return;
-    
+  const loadPdfBlogs = async () => {
     setLoading(true);
-    const result = await blogService.deleteBlog(blogId);
-    
+    const result = await pdfBlogService.getAllPdfBlogs();
     if (result.success) {
-      showAlert('Blog deleted successfully!');
-      loadBlogs();
+      setPdfBlogs(result.data);
     } else {
-      showAlert('Failed to delete blog: ' + result.error, 'danger');
+      setError('Failed to load PDF blogs');
     }
     setLoading(false);
   };
 
-  const handleImageChange = (e) => {
+  const handleShowModal = (pdfBlog = null) => {
+    if (pdfBlog) {
+      setEditingPdf(pdfBlog);
+      setFormData({
+        title: pdfBlog.title,
+        pdfFile: null
+      });
+    } else {
+      setEditingPdf(null);
+      setFormData({
+        title: '',
+        pdfFile: null
+      });
+    }
+    setShowModal(true);
+    setError(null);
+    setSuccess(null);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setEditingPdf(null);
+    setFormData({ title: '', pdfFile: null });
+    setError(null);
+    setSuccess(null);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      setImage(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result);
-      };
-      reader.readAsDataURL(file);
+    if (file && file.type === 'application/pdf') {
+      setFormData(prev => ({
+        ...prev,
+        pdfFile: file
+      }));
+      setError(null);
+    } else {
+      setError('Please select a valid PDF file');
+      e.target.value = '';
     }
   };
 
-  const applyFormat = (command, value = null) => {
-    document.execCommand(command, false, value);
-    editorRef.current.focus();
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+    setSuccess(null);
 
-  const handlePublish = async () => {
-    if (!title.trim()) {
-      showAlert('Please enter a title', 'danger');
+    if (!formData.title.trim()) {
+      setError('Title is required');
       return;
     }
 
-    const bodyContent = editorRef.current.innerHTML;
-    if (bodyContent.trim() === '' || bodyContent.trim() === 'Start writing your blog...') {
-      showAlert('Please write some content', 'danger');
+    if (!editingPdf && !formData.pdfFile) {
+      setError('Please select a PDF file');
       return;
     }
 
-    setLoading(true);
+    setUploading(true);
 
     try {
-      let imageUrl = imagePreview;
-      let imageName = null;
+      let pdfUrl = editingPdf?.pdf_url;
+      let fileName = editingPdf?.file_name;
 
-      // Upload new image if selected
-      if (image && typeof image === 'object') {
-        const uploadResult = await blogService.uploadImage(image);
-        if (uploadResult.success) {
-          imageUrl = uploadResult.url;
-          imageName = uploadResult.fileName;
-        } else {
-          showAlert('Failed to upload image: ' + uploadResult.error, 'danger');
-          setLoading(false);
-          return;
+      // Upload new PDF if provided
+      if (formData.pdfFile) {
+        const uploadResult = await pdfBlogService.uploadPdf(formData.pdfFile);
+        
+        if (!uploadResult.success) {
+          throw new Error(uploadResult.error);
+        }
+
+        pdfUrl = uploadResult.url;
+        fileName = uploadResult.fileName;
+
+        // Delete old PDF if updating
+        if (editingPdf?.file_name) {
+          await pdfBlogService.deletePdf(editingPdf.file_name);
         }
       }
 
-      const blogData = {
-        title,
-        body: bodyContent,
-        image_url: imageUrl,
-        image_name: imageName,
-        admin_id: adminData.id
+      // Create or update PDF blog
+      const pdfBlogData = {
+        title: formData.title,
+        pdf_url: pdfUrl,
+        file_name: fileName
       };
 
       let result;
-      if (editMode && currentBlogId) {
-        result = await blogService.updateBlog(currentBlogId, blogData);
-        showAlert(result.success ? 'Blog updated successfully!' : 'Failed to update blog: ' + result.error, result.success ? 'success' : 'danger');
+      if (editingPdf) {
+        result = await pdfBlogService.updatePdfBlog(editingPdf.id, pdfBlogData);
       } else {
-        result = await blogService.createBlog(blogData);
-        showAlert(result.success ? 'Blog published successfully!' : 'Failed to publish blog: ' + result.error, result.success ? 'success' : 'danger');
+        result = await pdfBlogService.createPdfBlog(pdfBlogData);
       }
 
       if (result.success) {
-        handleClose();
-        loadBlogs();
+        setSuccess(editingPdf ? 'PDF blog updated successfully!' : 'PDF blog created successfully!');
+        loadPdfBlogs();
+        setTimeout(() => {
+          handleCloseModal();
+        }, 1500);
+      } else {
+        throw new Error(result.error);
       }
-    } catch (error) {
-      showAlert('An error occurred: ' + error.message, 'danger');
+    } catch (err) {
+      setError(err.message || 'Failed to save PDF blog');
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleDelete = async (pdfBlog) => {
+    if (!confirm(`Are you sure you want to delete "${pdfBlog.title}"?`)) {
+      return;
     }
 
-    setLoading(false);
+    try {
+      // Delete PDF from storage
+      if (pdfBlog.file_name) {
+        await pdfBlogService.deletePdf(pdfBlog.file_name);
+      }
+
+      // Delete PDF blog record
+      const result = await pdfBlogService.deletePdfBlog(pdfBlog.id);
+      
+      if (result.success) {
+        setSuccess('PDF blog deleted successfully!');
+        loadPdfBlogs();
+        setTimeout(() => setSuccess(null), 3000);
+      } else {
+        setError(result.error);
+      }
+    } catch (err) {
+      setError('Failed to delete PDF blog');
+    }
   };
 
-  const truncateHTML = (html, maxLength = 100) => {
-    const div = document.createElement('div');
-    div.innerHTML = html;
-    const text = div.textContent || div.innerText || '';
-    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-  };
+  if (isLoading || !isAuthenticated) {
+    return (
+      <Container className="py-5 text-center">
+        <Spinner animation="border" variant="primary" />
+      </Container>
+    );
+  }
 
   return (
-    <ProtectedRoute>
-      <div className={styles.dashboardMainSection}>
-        <Header />
+    <Container fluid className="py-4">
+      <Row className="mb-4">
+        <Col>
+          <h2 className="mb-0">PDF Blogs Management</h2>
+        </Col>
+        <Col xs="auto">
+          <Button variant="primary" onClick={() => handleShowModal()}>
+            + Add New PDF Blog
+          </Button>
+        </Col>
+      </Row>
 
-        <Container className={styles.dashboardContainer}>
-          {/* Alert */}
-          {alert.show && (
-            <Alert variant={alert.variant} dismissible onClose={() => setAlert({ ...alert, show: false })}>
-              {alert.message}
-            </Alert>
-          )}
+      {success && <Alert variant="success" dismissible onClose={() => setSuccess(null)}>{success}</Alert>}
+      {error && <Alert variant="danger" dismissible onClose={() => setError(null)}>{error}</Alert>}
 
-          <Row className="mb-4">
-            <Col className="d-flex justify-content-between align-items-center">
-              <h3 className={styles.sectionTitle}>
-                Current Blogs 
-                <Badge bg="secondary" className="ms-2">{blogs.length}</Badge>
-              </h3>
-              <div>
-                <Button className={styles.newPostBtn} onClick={handleShow}>
-                  + New Post
-                </Button>
-                <Button variant="outline-danger" className="ms-2" onClick={handleLogout}>
-                  Logout
-                </Button>
-              </div>
-            </Col>
-          </Row>
-
-          {/* Blog List */}
-          {pageLoading ? (
+      <Card>
+        <Card.Body>
+          {loading ? (
             <div className="text-center py-5">
               <Spinner animation="border" variant="primary" />
-              <p className="mt-3">Loading blogs...</p>
             </div>
-          ) : blogs.length === 0 ? (
+          ) : pdfBlogs.length === 0 ? (
             <div className="text-center py-5">
-              <h5>No blogs found</h5>
-              <p className="text-muted">Create your first blog post to get started!</p>
+              <p className="text-muted">No PDF blogs yet. Create your first one!</p>
             </div>
           ) : (
-            <Row>
-              {blogs.map((blog) => (
-                <Col md={6} lg={4} key={blog.id} className="mb-3">
-                  <Card className={styles.blogCard}>
-                    {blog.image_url && (
-                      <Card.Img
-                        variant="top"
-                        src={blog.image_url}
-                        className={styles.blogImage}
-                        alt={blog.title}
-                      />
-                    )}
-                    <Card.Body>
-                      <Card.Title>{blog.title}</Card.Title>
-                      <Card.Text>
-                        {truncateHTML(blog.body)}
-                      </Card.Text>
-                      <div className="text-muted small mb-2">
-                        Created: {new Date(blog.created_at).toLocaleDateString()}
-                        {blog.updated_at !== blog.created_at && (
-                          <><br />Updated: {new Date(blog.updated_at).toLocaleDateString()}</>
-                        )}
-                      </div>
-                      <div className={styles.cardButtons}>
-                        <Button 
-                          variant="outline-success" 
-                          size="sm"
-                          onClick={() => handleEdit(blog)}
-                        >
-                          Edit
-                        </Button>
-                        <Button 
-                          variant="outline-danger" 
-                          size="sm"
-                          onClick={() => handleDelete(blog.id)}
-                          disabled={loading}
-                        >
-                          Delete
-                        </Button>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
+            <Table responsive striped hover>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Created</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pdfBlogs.map((pdfBlog, index) => (
+                  <tr key={pdfBlog.id}>
+                    <td>{index + 1}</td>
+                    <td>
+                      <strong>{pdfBlog.title}</strong>
+                    </td>
+                    <td>{new Date(pdfBlog.created_at).toLocaleDateString()}</td>
+                    <td>
+                      <Button 
+                        variant="outline-primary" 
+                        size="sm" 
+                        className="me-2"
+                        href={pdfBlog.pdf_url}
+                        target="_blank"
+                      >
+                        View PDF
+                      </Button>
+                      <Button 
+                        variant="outline-warning" 
+                        size="sm" 
+                        className="me-2"
+                        onClick={() => handleShowModal(pdfBlog)}
+                      >
+                        Edit
+                      </Button>
+                      <Button 
+                        variant="outline-danger" 
+                        size="sm"
+                        onClick={() => handleDelete(pdfBlog)}
+                      >
+                        Delete
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
           )}
-        </Container>
+        </Card.Body>
+      </Card>
 
-        {/* Fullscreen Modal for New/Edit Blog */}
-        <Modal
-          show={show}
-          onHide={handleClose}
-          fullscreen
-          className={styles.blogModal}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>
-              {editMode ? 'Edit Blog' : 'Create New Blog'}
-            </Modal.Title>
-          </Modal.Header>
+      {/* Add/Edit Modal */}
+      <Modal show={showModal} onHide={handleCloseModal} size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title>{editingPdf ? 'Edit PDF Blog' : 'Add New PDF Blog'}</Modal.Title>
+        </Modal.Header>
+        <Form onSubmit={handleSubmit}>
           <Modal.Body>
-            <Container>
-              <Form>
-                <Form.Group className="mb-3">
-                  <Form.Label>Upload Image</Form.Label>
-                  <Form.Control
-                    type="file"
-                    accept="image/*"
-                    className={styles.inputField}
-                    onChange={handleImageChange}
-                  />
-                  {imagePreview && (
-                    <div className="mt-2">
-                      <img 
-                        src={imagePreview} 
-                        alt="Preview" 
-                        style={{ maxWidth: '200px', maxHeight: '150px', objectFit: 'cover' }}
-                      />
-                    </div>
-                  )}
-                </Form.Group>
+            {error && <Alert variant="danger">{error}</Alert>}
+            {success && <Alert variant="success">{success}</Alert>}
 
-                <Form.Group className="mb-3">
-                  <Form.Label>Title *</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter blog title"
-                    className={styles.inputField}
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    required
-                  />
-                </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Title *</Form.Label>
+              <Form.Control
+                type="text"
+                name="title"
+                value={formData.title}
+                onChange={handleInputChange}
+                placeholder="Enter PDF blog title"
+                required
+              />
+            </Form.Group>
 
-                <Form.Group className="mb-3">
-                  <Form.Label>Body *</Form.Label>
-                  <div className={styles.editorToolbar}>
-                    <Button
-                      variant="light"
-                      size="sm"
-                      onClick={() => applyFormat("formatBlock", "H1")}
-                    >
-                      H1
-                    </Button>
-                    <Button
-                      variant="light"
-                      size="sm"
-                      onClick={() => applyFormat("formatBlock", "H2")}
-                    >
-                      H2
-                    </Button>
-                    <Button
-                      variant="light"
-                      size="sm"
-                      onClick={() => applyFormat("formatBlock", "H3")}
-                    >
-                      H3
-                    </Button>
-                    <Button
-                      variant="light"
-                      size="sm"
-                      onClick={() => applyFormat("bold")}
-                    >
-                      <strong>B</strong>
-                    </Button>
-                    <Button
-                      variant="light"
-                      size="sm"
-                      onClick={() => applyFormat("italic")}
-                    >
-                      <em>I</em>
-                    </Button>
-                    <Button
-                      variant="light"
-                      size="sm"
-                      onClick={() => applyFormat("underline")}
-                    >
-                      <u>U</u>
-                    </Button>
-                    <Button
-                      variant="light"
-                      size="sm"
-                      onClick={() => applyFormat("insertUnorderedList")}
-                    >
-                      • List
-                    </Button>
-                    <Button
-                      variant="light"
-                      size="sm"
-                      onClick={() => applyFormat("insertOrderedList")}
-                    >
-                      1. List
-                    </Button>
-                  </div>
-                  <div
-                    ref={editorRef}
-                    className={styles.editorArea}
-                    contentEditable
-                    suppressContentEditableWarning={true}
-                  >
-                    Start writing your blog...
-                  </div>
-                </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>
+                PDF File {editingPdf ? '(Leave empty to keep current PDF)' : '*'}
+              </Form.Label>
+              <Form.Control
+                type="file"
+                accept=".pdf"
+                onChange={handleFileChange}
+                required={!editingPdf}
+              />
+              <Form.Text className="text-muted">
+                Only PDF files are allowed. Max size: 10MB
+              </Form.Text>
+            </Form.Group>
 
-                <div className="d-flex gap-2">
-                  <Button 
-                    className={styles.postBtn} 
-                    onClick={handlePublish}
-                    disabled={loading}
-                  >
-                    {loading ? (
-                      <>
-                        <Spinner animation="border" size="sm" className="me-2" />
-                        {editMode ? 'Updating...' : 'Publishing...'}
-                      </>
-                    ) : (
-                      editMode ? 'Update Blog' : 'Publish Blog'
-                    )}
-                  </Button>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Cancel
-                  </Button>
-                </div>
-              </Form>
-            </Container>
+            {editingPdf && (
+              <Alert variant="info">
+                <strong>Current PDF:</strong>{' '}
+                <a href={editingPdf.pdf_url} target="_blank" rel="noopener noreferrer">
+                  View Current PDF
+                </a>
+              </Alert>
+            )}
           </Modal.Body>
-        </Modal>
-
-        <Footer />
-      </div>
-    </ProtectedRoute>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal} disabled={uploading}>
+              Cancel
+            </Button>
+            <Button variant="primary" type="submit" disabled={uploading}>
+              {uploading ? (
+                <>
+                  <Spinner
+                    as="span"
+                    animation="border"
+                    size="sm"
+                    role="status"
+                    className="me-2"
+                  />
+                  {editingPdf ? 'Updating...' : 'Creating...'}
+                </>
+              ) : (
+                editingPdf ? 'Update PDF Blog' : 'Create PDF Blog'
+              )}
+            </Button>
+          </Modal.Footer>
+        </Form>
+      </Modal>
+    </Container>
   );
 }

@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.pdfBlogDetailMain {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.pdfBlogDetailContainer {
+  padding: 40px 0 80px;
+}
+
+.backButton {
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  transform: translateX(-5px);
+}
+
+.blogArticle {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.blogMeta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.publishDate, .updateDate {
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.updateDate {
+  font-style: italic;
+}
+
+.blogTitle {
+  color: #006633;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.blogContent {
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* PDF Frame styled as blog content */
+.pdfContentFrame {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  border: none;
+  display: block;
+  background: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .pdfBlogDetailContainer {
+    padding: 20px 0 40px;
+  }
+  
+  .blogArticle {
+    padding: 25px 20px;
+    margin: 0 15px 20px;
+    border-radius: 10px;
+  }
+  
+  .blogTitle {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .pdfContentFrame {
+    min-height: 80vh;
+  }
+  
+  .blogMeta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .blogArticle {
+    padding: 20px 15px;
+    margin: 0 10px 20px;
+  }
+  
+  .blogTitle {
+    font-size: 24px;
+  }
+  
+  .pdfContentFrame {
+    min-height: 70vh;
+  }
+  
+  .backButton {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .backButton, .blogFooter {
+    display: none !important;
+  }
+  
+  .blogArticle {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .blogTitle {
+    color: black;
+  }
+}

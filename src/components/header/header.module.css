@@ -196,3 +196,9 @@
         height: 12px;
     }
 }
+
+
+.active a{
+  color: #006633 !important; /* Ya jo bhi aapka active color hai */
+  /* Aap yahan doosri styles bhi de sakte hain, jaise font-weight: bold; */
+}
