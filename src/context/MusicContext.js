@@ -15,10 +15,10 @@ export const useMusic = () => {
 export const MusicProvider = ({ children }) => {
   // Apne music tracks yahan add karein
   const tracks = [
-    { id: 1, name: 'Track 1', url: '/music/music1.mp3' },
-    { id: 2, name: 'Track 2', url: '/music/music2.mp3' },
-    { id: 3, name: 'Track 3', url: '/music/music3.mp3' },
-    { id: 4, name: 'Track 4', url: '/music/music4.mp3' },
+    { id: 1, name: 'Mirror in Mirror', url: '/music/music1.mp3' },
+    { id: 2, name: 'Erik Satie Gymnopedie No3', url: '/music/music2.mp3' },
+    { id: 3, name: 'Erik Satie Gymnopedie No1', url: '/music/music3.mp3' },
+    { id: 4, name: 'Erik Satie Gymnopedie No2', url: '/music/music4.mp3' },
   ];
 
   const [isPlaying, setIsPlaying] = useState(false);
