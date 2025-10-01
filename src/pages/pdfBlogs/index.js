@@ -44,12 +44,10 @@ export default function PdfBlogs() {
   if (loading) {
     return (
       <div className={styles.pdfBlogsMain}>
-        <Header />
         <div className="text-center py-5">
           <Spinner animation="border" variant="primary" />
           <p className="mt-3">Loading blogs...</p>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -57,12 +55,10 @@ export default function PdfBlogs() {
   if (error) {
     return (
       <div className={styles.pdfBlogsMain}>
-        <Header />
         <div className="text-center py-5">
           <h4 className="text-danger">Error: {error}</h4>
           <p>Unable to load blogs. Please try again later.</p>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -73,7 +69,6 @@ export default function PdfBlogs() {
 
   return (
     <div className={styles.pdfBlogsMain}>
-      <Header />
       
       <Container className={styles.pdfBlogsContainer}>
         <h2 className={styles.mainTitle}>Blog</h2>
@@ -184,7 +179,6 @@ export default function PdfBlogs() {
         )}
       </Container>
 
-      <Footer />
     </div>
   );
 }
