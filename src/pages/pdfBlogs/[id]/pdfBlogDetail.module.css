@@ -73,26 +73,6 @@
   background: white;
 }
 
-/* Mobile Actions */
-.mobileActions {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 2px solid #e9ecef;
-}
-
-/* Mobile: Ensure proper iframe height */
-@media (max-width: 768px) {
-  .pdfContentFrame {
-    min-height: 90vh;
-    height: 90vh;
-  }
-  
-  .mobileActions {
-    margin-top: 15px;
-    padding-top: 15px;
-  }
-}
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .pdfBlogDetailContainer {

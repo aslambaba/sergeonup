@@ -12,12 +12,8 @@ export default function PdfBlogDetail() {
   const [pdfBlog, setPdfBlog] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Detect mobile device
-    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
-    
     if (id) {
       loadPdfBlog();
     }
@@ -53,14 +49,12 @@ export default function PdfBlogDetail() {
   if (loading) {
     return (
       <div className={styles.pdfBlogDetailMain}>
-        <Header />
         <Container className="py-5">
           <div className="text-center">
             <Spinner animation="border" variant="primary" />
             <p className="mt-3">Loading article...</p>
           </div>
         </Container>
-        <Footer />
       </div>
     );
   }
@@ -68,7 +62,6 @@ export default function PdfBlogDetail() {
   if (error || !pdfBlog) {
     return (
       <div className={styles.pdfBlogDetailMain}>
-        <Header />
         <Container className="py-5">
           <Alert variant="danger" className="text-center">
             <h4>Article not found</h4>
@@ -78,14 +71,12 @@ export default function PdfBlogDetail() {
             </Button>
           </Alert>
         </Container>
-        <Footer />
       </div>
     );
   }
 
   return (
     <div className={styles.pdfBlogDetailMain}>
-      <Header />
       
       <div className={styles.pdfBlogDetailContainer}>
         <Container>
@@ -124,22 +115,11 @@ export default function PdfBlogDetail() {
 
                 {/* PDF Content as Blog Post */}
                 <div className={styles.blogContent}>
-                  {isMobile ? (
-                    // Mobile: Use Google Docs Viewer (better mobile support)
-                    <iframe
-                      src={`https://docs.google.com/viewer?url=${encodeURIComponent(pdfBlog.pdf_url)}&embedded=true`}
-                      className={styles.pdfContentFrame}
-                      title={pdfBlog.title}
-                      frameBorder="0"
-                    />
-                  ) : (
-                    // Desktop: Direct PDF embed
-                    <iframe
-                      src={`${pdfBlog.pdf_url}#toolbar=0&navpanes=0&scrollbar=1`}
-                      className={styles.pdfContentFrame}
-                      title={pdfBlog.title}
-                    />
-                  )}
+                  <iframe
+                    src={`${pdfBlog.pdf_url}#toolbar=0&navpanes=0&scrollbar=1`}
+                    className={styles.pdfContentFrame}
+                    title={pdfBlog.title}
+                  />
                 </div>
               </article>
             </Col>
@@ -147,7 +127,6 @@ export default function PdfBlogDetail() {
         </Container>
       </div>
       
-      <Footer />
     </div>
   );
 }
