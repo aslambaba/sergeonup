@@ -7,6 +7,7 @@ import INSTA from "./images/instagram.jpg";
 import LI from "./images/linkedin.jpg";
 import PINT from "./images/pintrest.jpg";
 import TOP from "./images/top.jpg";
+import Link from "next/link";
 
 
 
@@ -18,23 +19,49 @@ export default function Footer() {
           <div className={styles.FooterMainSec}>
             {/* Logo */}
             <Col lg={2}>
-              <h1>PRV</h1>
+              <Link href="/privacy">
+                <h1>PRV</h1>
+              </Link>
             </Col>
 
             {/* Menu Section */}
             <Col lg={8}>
               <div className={styles.menuItemSec}>
-                <Image src={FB} height={70} width={70} alt="Logo" />
-                <Image src={INSTA} height={70} width={70} alt="Logo" />
-                <Image src={LI} height={70} width={70} alt="Logo" />
-                <Image src={PINT} height={70} width={70} alt="Logo" />
-                <Image src={TOP} height={70} width={70} alt="Logo" />
+                <Link
+                  href="https://www.facebook.com/surgeonup1/"
+                  target="_blank"
+                >
+                  <Image src={FB} height={70} width={70} alt="Logo" />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/surgeonup/"
+                  target="_blank"
+                >
+                  <Image src={INSTA} height={70} width={70} alt="Logo" />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/robin-grantham/"
+                  target="_blank"
+                >
+                  <Image src={LI} height={70} width={70} alt="Logo" />
+                </Link>
+                <Link
+                  href="https://uk.pinterest.com/surgeonup/"
+                  target="_blank"
+                >
+                  <Image src={PINT} height={70} width={70} alt="Logo" />
+                </Link>
+                <a href="tel:+447356075678">
+                  <Image src={TOP} height={70} width={70} alt="Logo" />
+                </a>
               </div>
             </Col>
 
             {/* Book a Chat Section */}
             <Col lg={2}>
-              <h1>TOS</h1>
+              <Link href="/terms-of-service">
+                <h1>TOS</h1>
+              </Link>
             </Col>
           </div>
         </Row>

@@ -94,7 +94,7 @@
     
     .menuItemSec{
         font-size: 24px;
-        line-height: 60px;
+        line-height: 75px;
     }
     
     .musicnoteIcon{
@@ -111,7 +111,7 @@
     
     .menuItemSec{
         font-size: 18px;
-        line-height: 45px;
+        line-height: 58px;
     }
     
     .menuItemSec li{
@@ -132,7 +132,7 @@
     
     .menuItemSec{
         font-size: 14px;
-        line-height: 35px;
+        line-height: 44px;
     }
     
     .menuItemSec li{
@@ -157,7 +157,7 @@
     
     .menuItemSec{
         font-size: 12px;
-        line-height: 30px;
+        line-height: 40px;
     }
     
     .menuItemSec li{
@@ -183,7 +183,7 @@
     
     .menuItemSec{
         font-size: 10px;
-        line-height: 25px;
+        line-height: 32px;
     }
     
     .menuItemSec li{
@@ -197,6 +197,12 @@
     }
 }
 
+@media (max-width: 360px) {
+    .menuItemSec{
+        font-size: 8px;
+        line-height: 29px;
+    }
+}
 
 .active a{
   color: #006633 !important; /* Ya jo bhi aapka active color hai */

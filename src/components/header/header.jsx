@@ -53,13 +53,13 @@ export default function Header() {
                     <Col lg={12}>
                       <ul>
                         {/* Step 3: Apply conditional class */}
-                        <li className={router.pathname === "/" ? styles.active : ""}>
+                        <li className={router.pathname === "/" ? styles.active : ""} style={{justifyContent:"left"}}>
                           <a href="/">Home</a>
                         </li>
                         <li className={router.pathname === "/services" ? styles.active : ""}>
                           <a href="/services">Services</a>
                         </li>
-                        <li className={router.pathname === "/about" ? styles.active : ""}>
+                        <li className={router.pathname === "/about" ? styles.active : ""}  style={{justifyContent:"right"}}>
                           <a href="/about">About</a>
                         </li>
                         <li className={router.pathname === "/blogs" ? styles.active : ""}>

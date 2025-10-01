@@ -10,9 +10,12 @@ export default function PdfBlogs() {
   const [pdfBlogs, setPdfBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     loadPdfBlogs();
+    // Detect mobile device
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
   }, []);
 
   const loadPdfBlogs = async () => {
@@ -70,6 +73,7 @@ export default function PdfBlogs() {
 
   return (
     <div className={styles.pdfBlogsMain}>
+      <Header />
       
       <Container className={styles.pdfBlogsContainer}>
         <h2 className={styles.mainTitle}>Blog</h2>
@@ -94,7 +98,7 @@ export default function PdfBlogs() {
                           <div className={styles.blogImageLarge}>
                             <div className={styles.pdfPreview}>
                               <iframe
-                                src={`${pdfBlog.pdf_url}#page=1&view=Fit&toolbar=0&navpanes=0&scrollbar=0&zoom=100`}
+                                src={`${pdfBlog.pdf_url}#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
                                 className={styles.previewFrame}
                                 title={pdfBlog.title}
                                 scrolling="no"
@@ -128,14 +132,23 @@ export default function PdfBlogs() {
                         <div className={styles.blogCard}>
                           <h6>Read article</h6>
                           <div className={styles.blogImageSmall}>
-                            <div className={styles.pdfPreview}>
-                              <iframe
-                                src={`${pdfBlog.pdf_url}#page=1&view=Fit&toolbar=0&navpanes=0&scrollbar=0&zoom=100`}
-                                className={styles.previewFrame}
-                                title={pdfBlog.title}
-                                scrolling="no"
-                              />
-                            </div>
+                            {isMobile ? (
+                              // Mobile: Show placeholder
+                              <div className={styles.mobilePdfPlaceholder}>
+                                <div className={styles.pdfIconMobile}>📄</div>
+                                <p className={styles.tapToView}>Tap to view</p>
+                              </div>
+                            ) : (
+                              // Desktop: Show iframe preview
+                              <div className={styles.pdfPreview}>
+                                <iframe
+                                  src={`${pdfBlog.pdf_url}#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
+                                  className={styles.previewFrame}
+                                  title={pdfBlog.title}
+                                  scrolling="no"
+                                />
+                              </div>
+                            )}
                           </div>
                           <div className="mt-2">
                             <small className="text-muted">
@@ -171,6 +184,7 @@ export default function PdfBlogs() {
         )}
       </Container>
 
+      <Footer />
     </div>
   );
 }
