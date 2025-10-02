@@ -6,17 +6,7 @@ import { Container, Row, Col, Spinner, Alert, Badge, Button } from 'react-bootst
 import { pdfBlogService } from '@/lib/pdfBlogService';
 import styles from './pdfBlogDetail.module.css';
 
-import { Document, Page } from 'react-pdf';
-
 export default function PdfBlogDetail() {
-
-  const [numPages, setNumPages] = useState();
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
   const router = useRouter();
   const { id } = router.query;
   const [pdfBlog, setPdfBlog] = useState(null);
@@ -87,13 +77,14 @@ export default function PdfBlogDetail() {
 
   return (
     <div className={styles.pdfBlogDetailMain}>
+      
       <div className={styles.pdfBlogDetailContainer}>
         <Container>
           {/* Back Button */}
           <Row className="mb-4">
             <Col>
-              <Button
-                variant="outline-primary"
+              <Button 
+                variant="outline-primary" 
                 onClick={handleBackToBlogs}
                 className={styles.backButton}
               >
@@ -108,9 +99,7 @@ export default function PdfBlogDetail() {
               <article className={styles.blogArticle}>
                 {/* Meta Information */}
                 <div className={styles.blogMeta}>
-                  <Badge bg="success" className="me-2">
-                    Article
-                  </Badge>
+                  <Badge bg="success" className="me-2">Article</Badge>
                   <span className={styles.publishDate}>
                     Published on {formatDate(pdfBlog.created_at)}
                   </span>
@@ -135,12 +124,9 @@ export default function PdfBlogDetail() {
               </article>
             </Col>
           </Row>
-
-          <Document file={pdfBlog.pdf_url}>
-            <Page pageNumber={1} />
-          </Document>
         </Container>
       </div>
+      
     </div>
   );
 }
