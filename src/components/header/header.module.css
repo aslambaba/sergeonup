@@ -283,7 +283,11 @@
     .menuItemSec{
         font-size: 8px;
         line-height: 1.2;
-        height: 50px; /* ✅ Keep same as 480px */
+        height: 40px; /* ✅ Keep same as 480px */
+    }
+
+    .menuItemSec1{
+        padding-top: 10px;
     }
     
     .fullWidthContainer {
