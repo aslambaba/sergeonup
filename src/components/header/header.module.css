@@ -11,38 +11,47 @@
     width: 100%;
 }
 
-/* Full width container - replaces Bootstrap Container */
 .fullWidthContainer {
     width: 100%;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
 
 .HeaderMain{
-    margin: 20px 0px;
+    margin: 0;
+    padding: 10px 0;
 }
 
 .mainLogo{
     width: 100%;
-    height: 120px;
+    height: 120px; /* ✅ Ye height hai */
     display: flex;
     justify-content: center;
     align-items: center;
     object-fit: contain;
     transition: transform 0.6s ease; 
-
 }
 
 .mainLogo:hover{
   transform: scale(1.1);
 }
 
+/* ✅ Center div ki height = left/right image ki height */
 .menuItemSec{
     font-size: 22px;
     font-weight: 700;
-    line-height: 55px;
+    line-height: 1.2;
+    height: 120px; /* ✅ Same as mainLogo height */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* ✅ Top aur bottom mein distribute */
+    padding: 0; /* ✅ No extra padding */
+}
+
+.menuItemSec1 {
+    /* ✅ Ye top se attach rahega automatically */
 }
 
 .menuItemSec ul{
@@ -50,30 +59,33 @@
     padding: 0;
     display: flex;
     justify-content: space-between;
-    list-style: none;   
+    list-style: none;
+    align-items: flex-start;
 }
 
 .menuItemSec li{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     text-transform: uppercase;
     gap: 5px;
     font-size: 1.4em;
     flex: 1;
     text-align: center;
+    line-height: 1.2;
 }
 
 .menuItemSec li a{
     transition: transform 0.6s ease; 
 }
+
 .menuItemSec li a:hover {
   transform: scale(1.1);
-  color: #006633 !important; /* increases size by 10% */
+  color: #006633 !important;
 }
 
 .musicnoteIcon:hover {
-  transform: scale(1.2) rotate(-9deg); /* increases size by 10% */
+  transform: scale(1.2) rotate(-9deg);
 }
 
 .menuItemSec li a{
@@ -99,17 +111,19 @@
     transform: rotate(-9deg);
     flex-shrink: 0;
     transition: transform 0.6s ease; 
-
 }
 
+/* ✅ Ye bottom se attach rahega automatically (justify-content: space-between ki wajah se) */
 .conatinerNoFee {
   width: 100%;
   overflow: hidden;
-  transition: transform 0.6s ease; 
+  transition: transform 0.6s ease;
+  display: flex;
+  align-items: flex-end; /* ✅ Image ko bottom align */
 }
 
 .conatinerNoFee:hover{
-  transform: scale(1.05); /* increases size by 10% */
+  transform: scale(1.05);
 }
 
 .conatinerNoFee img {
@@ -118,9 +132,16 @@
   display: block;
 }
 
-/* Responsive scaling - maintaining proportions */
+/* Responsive scaling */
 
-/* Large screens (desktops) */
+@media (min-width: 1400px) {
+
+    .fullWidthContainer {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+}
+
 @media (min-width: 1200px) {
     .mainLogo{
         height: 120px;
@@ -128,7 +149,8 @@
     
     .menuItemSec{
         font-size: 24px;
-        line-height: 75px;
+        line-height: 1.2;
+        height: 120px; /* ✅ Same as mainLogo */
     }
     
     .musicnoteIcon{
@@ -137,7 +159,6 @@
     }
 }
 
-/* Medium screens (tablets landscape) */
 @media (max-width: 992px) {
     .mainLogo{
         height: 90px;
@@ -145,7 +166,12 @@
     
     .menuItemSec{
         font-size: 18px;
-        line-height: 58px;
+        line-height: 1.2;
+        height: 85px; /* ✅ Same as mainLogo */
+    }
+
+    .menuItemSec1{
+        padding-top: 4px;
     }
     
     .menuItemSec li{
@@ -158,7 +184,6 @@
     }
 }
 
-/* Small screens (tablets portrait) */
 @media (max-width: 768px) {
     .mainLogo{
         height: 70px;
@@ -166,7 +191,11 @@
     
     .menuItemSec{
         font-size: 14px;
-        line-height: 44px;
+        line-height: 1.2;
+        height: 66px; /* ✅ Same as mainLogo */
+    }
+    .menuItemSec1{
+        padding-top: 5px;
     }
     
     .menuItemSec li{
@@ -179,10 +208,10 @@
     }
 }
 
-/* Extra small screens (phones) */
 @media (max-width: 600px) {
     .HeaderMain{
-        margin: 10px 0px;
+        margin: 0;
+        padding: 5px 0;
     }
     
     .mainLogo{
@@ -191,7 +220,12 @@
     
     .menuItemSec{
         font-size: 12px;
-        line-height: 40px;
+        line-height: 1.2;
+        height: 55px; /* ✅ Same as mainLogo */
+    }
+
+    .menuItemSec1{
+        padding-top: 5px;
     }
     
     .menuItemSec li{
@@ -210,10 +244,10 @@
     }
 }
 
-/* Very small screens (small phones) */
 @media (max-width: 480px) {
     .HeaderMain{
-        margin: 8px 0px;
+        margin: 0;
+        padding: 3px 0;
     }
     
     .mainLogo{
@@ -222,9 +256,13 @@
     
     .menuItemSec{
         font-size: 10px;
-        line-height: 33px;
+        line-height: 1.2;
+        height: 45px; /* ✅ Same as mainLogo */
     }
     
+    .menuItemSec1{
+        padding-top: 6px;
+    }
     .menuItemSec li{
         font-size: 1.1em;
         gap: 2px;
@@ -244,7 +282,8 @@
 @media (max-width: 360px) {
     .menuItemSec{
         font-size: 8px;
-        line-height: 29px;
+        line-height: 1.2;
+        height: 50px; /* ✅ Keep same as 480px */
     }
     
     .fullWidthContainer {
