@@ -34,6 +34,20 @@ export default function Footer() {
                   <Image src={FB} height={70} width={70} alt="Logo" />
                 </Link>
                 <Link
+                  href="https://uk.pinterest.com/surgeonup/"
+                  target="_blank"
+                >
+                  <Image src={PINT} height={70} width={70} alt="Logo" />
+                </Link>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault(); // stop normal link behavior
+                    window.scrollTo({ top: 0, behavior: "smooth" }); // smooth scroll to top
+                  }}
+                >
+                  <Image src={TOP} height={70} width={70} alt="Logo" />
+                </a>
+                <Link
                   href="https://www.instagram.com/surgeonup/"
                   target="_blank"
                 >
@@ -45,15 +59,6 @@ export default function Footer() {
                 >
                   <Image src={LI} height={70} width={70} alt="Logo" />
                 </Link>
-                <Link
-                  href="https://uk.pinterest.com/surgeonup/"
-                  target="_blank"
-                >
-                  <Image src={PINT} height={70} width={70} alt="Logo" />
-                </Link>
-                <a href="tel:+447356075678">
-                  <Image src={TOP} height={70} width={70} alt="Logo" />
-                </a>
               </div>
             </Col>
 

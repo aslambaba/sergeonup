@@ -9,20 +9,16 @@ import MainLogo2 from "./images/musicnote.png";
 import MusicControlPopup from "@/click/MusicControlPopup/MusicControlPopup";
 import { useMusic } from "@/context/MusicContext";
 import Link from "next/link";
-import { useRouter } from 'next/router'; // Step 1: Import useRouter
+import { useRouter } from 'next/router';
 
 export default function Header() {
-  // 1. MusicContext se naya function lein
-  // const { askForMusicPreference, musicEnabled } = useMusic();
   const { musicEnabled, askForMusicPreference, setShowPlayer } = useMusic();
-
   const [showMusicControl, setShowMusicControl] = useState(false);
-  const router = useRouter(); // Step 2: Initialize router
+  const router = useRouter();
 
   const handleMusicIconClick = () => {
     if(musicEnabled){
-          setShowMusicControl(true);
-
+      setShowMusicControl(true);
     }else{
       askForMusicPreference();
     }
@@ -31,7 +27,8 @@ export default function Header() {
   return (
     <>
       <div className={styles.stickyHeader}>
-        <Container>
+        {/* Changed Container to div with custom class for full width */}
+        <div className={styles.fullWidthContainer}>
           <div className={styles.HeaderMain}>
             <Row>
               {/* Logo */}
@@ -52,20 +49,19 @@ export default function Header() {
                   <Row>
                     <Col lg={12}>
                       <ul>
-                        {/* Step 3: Apply conditional class */}
                         <li className={router.pathname === "/" ? styles.active : ""} style={{justifyContent:"left"}}>
                           <a href="/">Home</a>
                         </li>
                         <li className={router.pathname === "/services" ? styles.active : ""}>
                           <a href="/services">Services</a>
                         </li>
-                        <li className={router.pathname === "/about" ? styles.active : ""}  style={{justifyContent:"right"}}>
+                        <li className={router.pathname === "/about" ? styles.active : ""}>
                           <a href="/about">About</a>
                         </li>
                         <li className={router.pathname === "/blogs" ? styles.active : ""}>
                           <a href="/blogs">Blog</a>
                         </li>
-                        <li className={router.pathname === "/contact" ? styles.active : ""}>
+                        <li className={router.pathname === "/contact" ? styles.active : ""} style={{justifyContent:"right"}}>
                           <a href="/contact">Contact</a>{" "}
                           <Image
                             className={styles.musicnoteIcon}
@@ -101,7 +97,7 @@ export default function Header() {
               </Col>
             </Row>
           </div>
-        </Container>
+        </div>
       </div>
 
       {/* Music Control Popup */}

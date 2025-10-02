@@ -26,6 +26,7 @@ export default function Landing() {
                 <p>Surge-on Up is a combination of Robin Grantham's personal consulting and Tam Moudden's AI  and Google expertise.</p>
                 <p>Robin is a visionary CEO, according to not one but two Business Magazines, TradeFlock and CIS. He has 25 years' experience working with legendary Hollywood Stars up close and personal. He has a BAFTA nomination.</p>
                 <p>Tam has a Computer Science Degree from Cambridge, 25 years experience in SEO and  a recent Semrush Certification in AI0. Plus top global Aesthetic Surgeon's plaudits from Beverly Hills to Barcelona, the UAE and beyond. </p>
+                <p>We guarantee to get you 10 new Clients in 30 days - no upfront cost. You only pay on Day 31.</p>
             </div>
         </div>
     </div>

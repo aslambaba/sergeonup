@@ -64,6 +64,56 @@
     margin: 0px 5px;
 }
 
+.sericeBox2{
+    background-color: #33FFCC;
+    border-radius: 10px;
+    text-align: center;
+    color: #3366FF;
+    font-family: "Poppins", sans-serif;
+    min-height: 400px;
+}
+
+.sericeBox2 h3, .sericeBox2 h4{
+    margin: 0px 5px;
+    font-weight: 800;
+}
+
+.sericeBox2 h4{
+    margin: 6px 0px;
+}
+
+.sericeBox2 h5{
+    display: inline-block;
+    margin: 0px 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+}
+.sericeBox2 h6{
+    margin: 0px;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.sericeBox2 p{
+    padding: 4px 12px !important;
+    font-weight: 500;
+    font-size: 0.9em;
+    padding: 5px 0px 5px 6px;
+    margin-bottom: 0px;
+}
+.sericeBox2 img{
+    height: 55px;
+    width: 80px;
+    margin: 0px 5px;
+}
+
+.flagBarImage{
+    margin: 0px !important;
+    height: 25px !important;
+    width: 100% !important;
+}
+
 @media (max-width: 480px) {
     .serviceDailog{
         color: #33FFCC;

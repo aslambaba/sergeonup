@@ -11,8 +11,11 @@ import CardImg from './images/sergonup-cards.jpg';
 import GoldStar from './images/sergonup-brwonstar.png';
 import Agency from './images/sergonup-agency.jpg';;
 
-import SilverStart from './images/sergonup-silverstar.png';
+import SilverStar from './images/sergonup-silverstar.png';
+import SilverStar2 from "./images/silverstar.png"
 import OpImg from './images/sergonup-op.png';
+
+import FlagBar from './images/flag-bar.png';
 
 export default function Services() {
   return (
@@ -53,10 +56,12 @@ export default function Services() {
               </div>
             </Col>
             <Col lg={3} md={6} sm={12} xs={12}>
-              <div className={styles.sericeBox}>
+              <div className={styles.sericeBox2}>
                 <h3>OFFER</h3>
-                <Row>
-                  <Col lg={3} md={3} sm={3} xs={3}></Col>
+                <Row className="m-0">
+                  <Col lg={3} md={3} sm={3} xs={3}>
+                    <Image src={SilverStar2} alt="Logo" />
+                  </Col>
                   <Col lg={9} md={9} sm={9} xs={9}>
                     <div>
                       <Image
@@ -71,6 +76,11 @@ export default function Services() {
                   <span style={{ fontStyle: "italic" }}>CUT</span>{" "}
                   <span className={styles.green}> YOUR CARD COSTS </span>
                 </h4>
+                <Image
+                  className={styles.flagBarImage}
+                  src={FlagBar}
+                  alt="Logo"
+                />
                 <p style={{ textAlign: "left" }}>
                   Stop wasting £1000s in card fees! Other Clinic Owners created
                   a 7-second bank app that replaces transaction costs for under
@@ -82,13 +92,13 @@ export default function Services() {
                     <span style={{ fontWeight: 500, fontSize: "1.8rem" }}>
                       $
                     </span>{" "}
-                    <br /> 125
+                    <br /> &lt;25
                   </h5>
                   <h5 className={styles.green}>
                     <span style={{ fontWeight: 500, fontSize: "1.8rem" }}>
                       £
                     </span>
-                    <br /> 100
+                    <br /> &lt;100
                   </h5>
                 </div>
               </div>
@@ -153,7 +163,7 @@ export default function Services() {
                     <div>
                       <Image
                         style={{ width: "100%" }}
-                        src={SilverStart}
+                        src={SilverStar}
                         alt="Logo"
                       />
                     </div>

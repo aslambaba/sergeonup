@@ -14,8 +14,6 @@ import Footer from "@/components/footer/footer";
 export default function AboutRobin() {
   return (
     <div className={styles.AboutRobinMainContainer}>
-      <Header />
-
       <div className={styles.AboutRobinSec}>
         <div className={styles.ImageContainer}>
           <Image
@@ -148,8 +146,6 @@ export default function AboutRobin() {
           </h4>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

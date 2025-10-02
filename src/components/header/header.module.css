@@ -11,6 +11,15 @@
     width: 100%;
 }
 
+/* Full width container - replaces Bootstrap Container */
+.fullWidthContainer {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .HeaderMain{
     margin: 20px 0px;
 }
@@ -47,6 +56,11 @@
     font-size: 1.4em;
     flex: 1;
     text-align: center;
+  transition: transform 0.3s ease; /* smooth effect */
+
+}
+.menuItemSec li:hover {
+  transform: scale(1.1); /* increases size by 10% */
 }
 
 .menuItemSec li a{
@@ -169,6 +183,11 @@
         width: 14px;
         height: 14px;
     }
+    
+    .fullWidthContainer {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
 }
 
 /* Very small screens (small phones) */
@@ -195,6 +214,11 @@
         width: 12px;
         height: 12px;
     }
+    
+    .fullWidthContainer {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -202,9 +226,13 @@
         font-size: 8px;
         line-height: 29px;
     }
+    
+    .fullWidthContainer {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
 }
 
 .active a{
-  color: #006633 !important; /* Ya jo bhi aapka active color hai */
-  /* Aap yahan doosri styles bhi de sakte hain, jaise font-weight: bold; */
+  color: #006633 !important;
 }

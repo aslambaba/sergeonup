@@ -15,8 +15,6 @@ import Footer from "@/components/footer/footer";
 export default function AboutTam() {
   return (
     <div className={styles.AboutRobinMainContainer}>
-      <Header />
-
       <div className={styles.AboutRobinSec}>
         <div className={styles.ImageContainer}>
           <Image
@@ -136,8 +134,6 @@ export default function AboutTam() {
           </h4>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
