@@ -58,13 +58,13 @@ export default function Contact() {
           >
             <div className={styles.Contact3ContentAlignment0}>
               <h5>
-                <span style={{ color: "#006633" }}>W H A T ‘ S Y O U R</span>{" "}
+                <span className={styles.whatsYO}>W H A T ‘ S Y O U R</span>{" "}
                 <br /> What things do you like about our Website? What do you
                 dislike?
               </h5>
               <Image src={WhatsAppImg} alt="Logo" width={50} height={50} />
               <h5>
-                <span style={{ color: "#006633" }}>O P I N I O N ?</span> <br />{" "}
+                <span className={styles.whatsYO}>O P I N I O N ?</span> <br />{" "}
                 How can we improve? What other Services would you like?
               </h5>
             </div>

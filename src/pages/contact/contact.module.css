@@ -15,6 +15,14 @@
     text-transform: uppercase;
 }
 
+.whatsYO{
+    font-size: 1.6em;
+    word-spacing: 30px;
+    font-style: italic;
+    color: #006633;
+    font-weight: 800;
+}
+
 .contactMainSection h4{
     font-weight: 600;
 }
@@ -77,6 +85,11 @@
     .contactTextSec1 {
         font-size: 20px;
     }
+    
+    .whatsYO {
+        word-spacing: 35px;
+        font-size: 1.6em;
+    }
 }
 
 /* Medium-large screens (992px - 1199px) */
@@ -96,6 +109,11 @@
     .contactTextSec1 {
         font-size: 17px;
     }
+
+    .whatsYO{
+        word-spacing: 25px;
+        font-size: 1.5em;
+    }
 }
 
 /* Medium screens (tablets landscape 768px - 991px) */
@@ -114,6 +132,15 @@
     
     .contactTextSec1 {
         font-size: 16px;
+    }
+
+    .Contact3ContentAlignment0 h5{
+        font-size: 0.9em;
+    }
+    
+    .whatsYO{
+        font-size: 1.3em;
+        word-spacing: 18px;
     }
 }
 
@@ -137,6 +164,11 @@
 
     .contactTextSec1 p{
       line-height: 16px;
+    }
+    
+    .whatsYO{
+        word-spacing: 12px;
+        font-size: 1.2em;
     }
     
     /* Scale images proportionally */
@@ -171,6 +203,11 @@
 
     .contactTextSec1 p{
       line-height: 16px;
+    }
+    
+    .whatsYO{
+        word-spacing: 8px;
+        font-size: 1.1em;
     }
     
     /* Scale images */
@@ -234,6 +271,11 @@
       line-height: 16px;
     }
     
+    .whatsYO{
+        word-spacing: 5px;
+        font-size: 1em;
+    }
+    
     /* Scale images for very small phones */
     .contactTextSec1 img[width="50"] {
         width: 30px !important;
@@ -243,5 +285,17 @@
     .contactTextSec1 img[width="100"] {
         width: 60px !important;
         height: 30px !important;
+    }
+}
+
+/* Extra tiny screens (320px and below) */
+@media (max-width: 360px) {
+    .whatsYO{
+        word-spacing: 3px;
+        font-size: 0.9em;
+    }
+    
+    .contactMainSection h2 {
+        font-size: 24px;
     }
 }
