@@ -167,6 +167,8 @@
         width: 16px;
         height: 16px;
         margin-top: 3px;
+        margin-left: 8px;
+        margin-right: 8px;
     }
 }
 
@@ -181,6 +183,8 @@
     .musicnoteIcon {
         width: 12px;
         height: 12px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }
 
@@ -190,16 +194,24 @@
         padding: 5px;
     }
     .menuItemSec li {
-        font-size: 0.7em;
+        font-size: 0.9em;
         gap: 3px;
     }
     .musicnoteIcon {
         width: 10px;
         height: 10px;
-        margin-top: 0px;
+        margin-top: 2px;
+        margin-left: 3px;
+        margin-right: 3px;
     }
     .container2 {
         margin: 0px 5px;
+    }
+}
+@media (max-width: 480px) {
+    .menuItemSec li {
+        font-size: 0.7em;
+        gap: 3px;
     }
 }
 
@@ -216,6 +228,8 @@
         width: 8px;
         height: 8px;
         margin-top: 0px;
+        margin-left: 2px;
+        margin-right: 2px;
 
     }
     .container2 {
@@ -233,5 +247,7 @@
         width: 6px;
         height: 6px;
         margin-top: 0px;
+        margin-left: 2px;
+        margin-right: 2px;
     }
 }
