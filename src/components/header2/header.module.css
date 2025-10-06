@@ -25,7 +25,7 @@
 }
 .container2{
     flex: 8;
-    padding-bottom: 5px;
+    padding-bottom: 7px;
 }
 .container3{
     flex: 2;
@@ -223,7 +223,7 @@
         margin-right: 2px;
     }
     .container2{
-        padding-bottom: 1px;
+        padding-bottom: 2px;
     }
 }
 
