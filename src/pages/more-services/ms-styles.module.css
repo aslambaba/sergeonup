@@ -119,4 +119,18 @@
     .singleServiceContainer h3{
         font-size: 1.2em;
     }
+
+    .moreServicesPricingTable p{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .moreServicesPricingTable h2{
+        font-size: 1.1em;
+    }
+
+    .moreServicesPricingTable p{
+        font-size: 16px;
+    }
 }
