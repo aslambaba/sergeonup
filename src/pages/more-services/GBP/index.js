@@ -19,16 +19,16 @@ export default function MoreServices() {
               prime screen real estate. It appears above regular organic search
               results and has massive visibility and click-through rates. It
               literally puts you on the map.
-              <br /> It's often a Client’s first impression of you. It displays
-              photos, reviews, hours, your location and services that all build
-              the trust that is so crucial.
+              <br /> It&apos;s often a Client&apos;s first impression of you. It
+              displays photos, reviews, hours, your location and services that
+              all build the trust that is so crucial.
               <br /> Clients can call, book, and get directions with one tap.
               GBPs with regular posts, review responses, and fresh content
               consistently outperform their competitors.
-              <br /> Most practices underutilise their GBP; don’t be one of
+              <br /> Most practices underutilise their GBP; don&apos;t be one of
               them!
-              <br /> The question isn't whether you can afford to invest in your
-              GBP—it's whether you can afford not to!  
+              <br /> The question isn&apos;t whether you can afford to invest in
+              your GBP—it&apos;s whether you can afford not to!
               <Image src={logo} height={25} width={30} alt="Logo" />
             </p>
           </div>

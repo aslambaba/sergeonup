@@ -13,22 +13,23 @@ export default function MoreServices() {
           <div className={styles.singleServiceDesContainer}>
             <h3>AIOO</h3>
             <p>
-              Google's AI Overviews represent the future of search, already
+              Google&apos;s AI Overviews represent the future of search, already
               starting to appear above even Paid Ads (PPC)! <br /> This is where
-              tomorrow's Clients will find you.
+              tomorrow&apos;s Clients will find you.
               <br /> As search evolves, AI Overviews will dominate discovery.
-              When someone searches "best facelift surgeon", Google's AI blends
-              “mentions” from all authoritative sources. You must be among them.
+              When someone searches &quot;best facelift surgeon&quot;,
+              Google&apos;s AI blends &ldquo;mentions&rdquo; from all
+              authoritative sources. You must be among them.
               <br /> AIOO positions you for this inevitable shift. Practices
               optimised now will gain massive visibility as AI-driven search
               becomes the norm,
               <br /> It will build the trust that is so crucial for Surgeons
               through recommendations.
               <br />
-              This isn't just another marketing trend—it's the next era of
-              digital discovery.
-              <br /> Most Surgeons haven't heard of AIOO. Jump on now, ride the
-              wave with Surge-on Up!
+              This isn&apos;t just another marketing trend—it&apos;s the next
+              era of digital discovery.
+              <br /> Most Surgeons haven&apos;t heard of AIOO. Jump on now, ride
+              the wave with Surge-on Up!
               <Image src={logo} height={25} width={30} alt="Logo" />
             </p>
           </div>

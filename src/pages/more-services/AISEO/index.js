@@ -14,24 +14,25 @@ export default function MoreServices() {
             <h3>AISEO</h3>
             <p>
               AI Search Engines are reshaping how Clients discover Surgeons like
-              you. Platforms like ChatGPT, Perplexity, and Google's AI Overview
-              are now available.
+              you. Platforms like ChatGPT, Perplexity, and Google&apos;s AI
+              Overview are now available.
               <br /> They answer millions of health queries daily. When someone
-              asks, "Best rhinoplasty surgeon near me," AI doesn't just give a
-              list of websites. It offers recommendations with context.
-              <br />  Being featured in AI responses is the new frontier of
+              asks, &quot;Best rhinoplasty surgeon near me,&quot; AI
+              doesn&apos;t just give a list of websites. It offers
+              recommendations with context.
+              <br /> Being featured in AI responses is the new frontier of
               digital visibility.
               <br /> AI engines prioritise authoritative, structured content
               that answers patient questions. They get their information from
               verified sources, reviews, and detailed service descriptions.
-              <br /> If your practice isn't optimised for AI discovery, you're
-              invisible. A growing section of Clients now trusts AI when
-              searching for a Surgeon.
-              <br /> The vast majority of practices haven't even started AI
-              Search optimisation.<br/> Don't fall behind!  Get in now, ride the
-              crest of the wave!              
+              <br /> If your practice isn&apos;t optimised for AI discovery,
+              you&apos;re invisible. A growing section of Clients now trusts AI
+              when searching for a Surgeon.
+              <br /> The vast majority of practices haven&apos;t even started AI
+              Search optimisation.
+              <br /> Don&apos;t fall behind! Get in now, ride the crest of the
+              wave!
               <Image src={logo} height={25} width={30} alt="Logo" />
-              
             </p>
           </div>
         </div>
