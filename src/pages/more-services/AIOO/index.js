@@ -1,0 +1,86 @@
+import Link from "next/link";
+import styles from "../ms-styles.module.css"
+import { Col, Row } from "react-bootstrap";
+import Image from "next/image";
+import logo from "../images/logo.jpg";
+
+export default function MoreServices() {
+
+    
+    return (
+      <div className={styles.moreServices}>
+        <div className={styles.moreServicesContainer}>
+          <div className={styles.singleServiceDesContainer}>
+            <h3>AIOO</h3>
+            <p>
+              Google's AI Overviews represent the future of search, already
+              starting to appear above even Paid Ads (PPC)! <br /> This is where
+              tomorrow's Clients will find you.
+              <br /> As search evolves, AI Overviews will dominate discovery.
+              When someone searches "best facelift surgeon", Google's AI blends
+              “mentions” from all authoritative sources. You must be among them.
+              <br /> AIOO positions you for this inevitable shift. Practices
+              optimised now will gain massive visibility as AI-driven search
+              becomes the norm,
+              <br /> It will build the trust that is so crucial for Surgeons
+              through recommendations.
+              <br />
+              This isn't just another marketing trend—it's the next era of
+              digital discovery.
+              <br /> Most Surgeons haven't heard of AIOO. Jump on now, ride the
+              wave with Surge-on Up!
+              <Image src={logo} height={25} width={30} alt="Logo" />
+            </p>
+          </div>
+        </div>
+        <br />
+        <div className={styles.moreServicesPricing}>
+          <div className={styles.moreServicesPricingTable}>
+            <Row>
+              <Col lg={8} md={8} sm={8} xs={8}></Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                <p className={styles.green} style={{ marginBottom: "0px" }}>
+                  $
+                </p>
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                <p style={{ marginBottom: "0px" }}>€</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col lg={8} md={8} sm={2} xs={8}>
+                <h2>The First Month:</h2>
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                <p className={styles.green} style={{ marginBottom: "0px" }}>
+                  <span>1997</span>
+                </p>
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                <p style={{ marginBottom: "0px" }}>
+                  <span>1500</span>
+                </p>
+              </Col>
+            </Row>
+          </div>
+          <div className={styles.moreServicesPricingTable}>
+            <Row>
+              <Col lg={8} md={8} sm={8} xs={8}>
+                <h2>Monthly Updates:</h2>
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                <p className={styles.green} style={{ marginBottom: "0px" }}>
+                  <span>993</span>
+                </p>
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                <p style={{ marginBottom: "0px" }}>
+                  <span>750</span>
+                </p>
+              </Col>
+            </Row>
+          </div>
+        </div>
+      </div>
+    );
+}

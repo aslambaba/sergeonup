@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.moreServices{
+    background-color: #3366FF;
+    padding: 20px;
+}
+
+.moreServicesContainer{
+    background-color: #33FFCC;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.singleServiceContainer{
+    background-color: #3366FF;
+    color: #33FFCC;
+    text-align: center;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.singleServiceContainer h3{
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.moreServicesContainer a {
+    text-decoration: none !important;
+}
+
+
+/* Description Styling */
+
+.singleServiceDesContainer{
+    color: #3366FF;
+    background-color: #33FFCC;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.singleServiceDesContainer h3{
+    font-weight: 800;
+    font-family: "Poppins", sans-serif !important;
+    word-spacing: 10px;
+}
+
+.singleServiceDesContainer p{
+    text-align: left;
+    font-weight: 600;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.moreServicesPricing{
+    background-color: #33FFCC;
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+
+.moreServicesPricingTable{
+    margin: 10px 0px;
+    color: #3366FF;
+}
+
+.moreServicesPricingTable h2{
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.moreServicesPricingTable p{
+    font-weight: 800;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.green{
+    color: #006633;
+}
+
+@media (max-width: 480px) {
+    .singleServiceDesContainer p{
+        text-align: left;
+        font-weight: 500;
+        font-size: 18px;
+    }   
+
+    .moreServicesPricingTable h2{
+        font-size: 1.4em;
+    }
+}
