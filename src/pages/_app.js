@@ -1,5 +1,5 @@
 import { AuthProvider } from '@/context/AuthContext'
-import Header from "@/components/header/header";
+import Header from "@/components/header2/header";
 import Footer from "@/components/footer/footer";
 import styles from "../styles/Home.module.css"
 import { MusicProvider } from '../context/MusicContext';

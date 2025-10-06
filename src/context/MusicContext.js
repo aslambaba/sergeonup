@@ -26,28 +26,39 @@ export const MusicProvider = ({ children }) => {
   const [volume, setVolume] = useState(0.5);
   const [showWelcomePopup, setShowWelcomePopup] = useState(false);
   const [musicEnabled, setMusicEnabled] = useState(false);
-  const [showPlayer, setShowPlayer] = useState(false); // Player popup ke liye state
+  const [showPlayer, setShowPlayer] = useState(false);
   const audioRef = useRef(null);
+  const hasInitialized = useRef(false); // Track if we've initialized once
 
-  // Load hone par localStorage check karein
+  // Load hone par localStorage check karein - SIRF EK BAAR
   useEffect(() => {
+    if (hasInitialized.current) return; // Agar pehle initialize ho chuka hai to skip karo
+    hasInitialized.current = true;
+
     const hasSeen = localStorage.getItem('hasSeenMusicPopup');
     if (!hasSeen) {
+      // Agar pehli baar hai to welcome popup dikhao
       setShowWelcomePopup(true);
     } else {
       const preference = localStorage.getItem('musicPreference');
+      const wasPlaying = localStorage.getItem('musicWasPlaying');
+      
       if (preference === 'enabled') {
         setMusicEnabled(true);
-        setIsPlaying(true);
-        const randomIndex = Math.floor(Math.random() * tracks.length);
-        setCurrentTrackIndex(randomIndex);
+        // Sirf tab play karo agar user ne pehle play kiya tha
+        if (wasPlaying === 'true') {
+          setIsPlaying(true);
+          const savedIndex = localStorage.getItem('currentTrackIndex');
+          const randomIndex = savedIndex ? parseInt(savedIndex) : Math.floor(Math.random() * tracks.length);
+          setCurrentTrackIndex(randomIndex);
+        }
       }
     }
   }, []);
 
   // Audio element initialize karein
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && !audioRef.current) {
       audioRef.current = new Audio();
       audioRef.current.volume = volume;
       audioRef.current.addEventListener('ended', playNextTrack);
@@ -76,6 +87,14 @@ export const MusicProvider = ({ children }) => {
       audioRef.current.volume = volume;
     }
   }, [volume]);
+
+  // Playing state ko localStorage mein save karo
+  useEffect(() => {
+    if (hasInitialized.current) {
+      localStorage.setItem('musicWasPlaying', isPlaying ? 'true' : 'false');
+      localStorage.setItem('currentTrackIndex', currentTrackIndex.toString());
+    }
+  }, [isPlaying, currentTrackIndex]);
 
   // Agla track play karein
   const playNextTrack = () => {
@@ -112,10 +131,11 @@ export const MusicProvider = ({ children }) => {
     setVolume(newVolume);
   };
 
-  // Music enable karein
+  // Music enable karein - Welcome popup se
   const enableMusic = () => {
     localStorage.setItem('hasSeenMusicPopup', 'true');
     localStorage.setItem('musicPreference', 'enabled');
+    localStorage.setItem('musicWasPlaying', 'true');
     setMusicEnabled(true);
     setShowWelcomePopup(false);
     setIsPlaying(true);
@@ -123,10 +143,11 @@ export const MusicProvider = ({ children }) => {
     setCurrentTrackIndex(randomIndex);
   };
   
-  // Music disable karein
+  // Music disable karein - Welcome popup se
   const disableMusic = () => {
     localStorage.setItem('hasSeenMusicPopup', 'true');
     localStorage.setItem('musicPreference', 'disabled');
+    localStorage.setItem('musicWasPlaying', 'false');
     setMusicEnabled(false);
     setShowWelcomePopup(false);
     setIsPlaying(false);

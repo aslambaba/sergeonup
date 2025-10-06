@@ -11,7 +11,6 @@ import Footer from "@/components/footer/footer";
 export default function Service() {
     return (
       <div className={styles.ServicesMainSection}>
-        <Header />
         <h2>Services</h2>
         <Container>
           <div className={styles.ServiceMainSec1}>

@@ -6,13 +6,12 @@
 
 .TosMainSection h1{
     color: #006633;
-  font-size: 48px;
-  font-weight: 800;
-  text-align: center;
-  -webkit-text-stroke: 1px #3366ff;
-text-transform: uppercase;
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    -webkit-text-stroke: 1px #3366ff;
+    text-transform: uppercase;
 }
-
 
 .TosTextContainer{
     border: 5px solid #006633;
@@ -22,7 +21,7 @@ text-transform: uppercase;
 }
 
 .TosTextContainer2{
-     border: 5px solid #006633;
+    border: 5px solid #006633;
     border-radius: 5px;
     padding: 40px;
     margin: 10px;
@@ -50,7 +49,6 @@ text-transform: uppercase;
     color: #3366ff;
     font-weight: 800;
     font-size: 38px;
-    line-height: 38px;
 }
 
 .COCImageSec{
@@ -58,6 +56,7 @@ text-transform: uppercase;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .TosTextContainer2 p{
@@ -81,4 +80,169 @@ text-transform: uppercase;
     color: #006633;
     font-size: 44px;
     font-weight: 700;
+}
+.RobinImg, .TamImg{
+    width: 250 !important;
+    height: 310 !important;
+}
+.BarImg{
+    width: 500 !important;
+    height: 70 !important;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .TosMainSection h1 {
+        font-size: 32px;
+        -webkit-text-stroke: 0.5px #3366ff;
+        padding: 10px;
+    }
+
+    .TosTextContainer,
+    .TosTextContainer2 {
+        border-width: 3px;
+        padding: 20px 15px;
+        margin: 10px 5px;
+    }
+
+    .TosCOCSection {
+        border-width: 2px;
+        padding: 10px 5px;
+    }
+
+    .TosCOCSection h2 {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+
+    .TosCOCSection h1 {
+        font-size: 24px;
+    }
+
+    .TosCOCSection p {
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+
+    .COCImageSec {
+        flex-direction: column;
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .COCImageSec img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .TosTextContainer2 p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .TosTextContainer2 li {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+
+    .TosTextContainer2 h1,
+    .TosTextContainer2 h2,
+    .TosTextContainer2 h3,
+    .TosTextContainer2 h4,
+    .TosTextContainer2 h5,
+    .TosTextContainer2 h6 {
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .TosTextContainer2 ul,
+    .TosTextContainer2 ol {
+        padding-left: 25px;
+    }
+}
+
+/* Extra small mobile devices */
+@media screen and (max-width: 480px) {
+    .TosMainSection h1 {
+        font-size: 24px;
+    }
+
+    .TosTextContainer,
+    .TosTextContainer2 {
+        padding: 15px 10px;
+        margin: 8px 3px;
+    }
+
+    .TosCOCSection h2 {
+        font-size: 22px;
+    }
+
+    .TosCOCSection h1 {
+        font-size: 20px;
+    }
+
+    .TosCOCSection p {
+        font-size: 16px;
+    }
+
+    .TosTextContainer2 p {
+        font-size: 16px;
+    }
+
+    .TosTextContainer2 li {
+        font-size: 14px;
+    }
+
+    .TosTextContainer2 h1,
+    .TosTextContainer2 h2,
+    .TosTextContainer2 h3,
+    .TosTextContainer2 h4,
+    .TosTextContainer2 h5,
+    .TosTextContainer2 h6 {
+        font-size: 18px;
+    }
+}
+
+/* Tablet landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .TosMainSection h1 {
+        font-size: 40px;
+    }
+
+    .TosCOCSection h2 {
+        font-size: 38px;
+    }
+
+    .TosCOCSection p {
+        font-size: 28px;
+    }
+
+    .TosTextContainer2 p {
+        font-size: 28px;
+    }
+
+    .TosTextContainer2 li {
+        font-size: 22px;
+    }
+    .COCImageSec {
+        flex-direction: column;
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .COCImageSec img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .TosTextContainer2 h1,
+    .TosTextContainer2 h2,
+    .TosTextContainer2 h3,
+    .TosTextContainer2 h4,
+    .TosTextContainer2 h5,
+    .TosTextContainer2 h6 {
+        font-size: 32px;
+    }
 }

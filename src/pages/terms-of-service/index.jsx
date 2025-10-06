@@ -2,6 +2,7 @@ import Header from "@/components/header/header"
 import styles from "./tos.module.css"
 import RobinImg from "./images/robin-profile.png"
 import TamImg from "./images/tam-profile.png"
+import Bar from "./images/bar.png"
 import Image from "next/image";
 import Footer from "@/components/footer/footer";
 
@@ -28,6 +29,7 @@ export default function TOS(){
           </div>
           <div className={styles.COCImageSec}>
             <Image src={RobinImg} alt="Logo" width={250} height={310} />
+            <Image src={Bar} alt="Logo" width={500} height={70} />
             <Image src={TamImg} alt="Logo" width={250} height={310} />
           </div>
         </div>
