@@ -246,15 +246,16 @@
     }
     .container2 {
         margin: 0px 3px;
-        padding: 2px 0px;
+        padding-bottom: 2px;
     }
 }
 
 /* Very Small Screens */
-@media (max-width: 320px) {
+@media (max-width: 380px) {
     .menuItemSec li {
         font-size: 0.45em;
         gap: 1px;
+        font-weight: 700;
     }
     .musicnoteIcon {
         width: 6px;
@@ -265,5 +266,6 @@
     }
     .container2{
         padding: 1px 0px;
+        padding-bottom: 2px;
     }
 }
