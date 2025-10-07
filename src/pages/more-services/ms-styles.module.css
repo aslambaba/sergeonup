@@ -8,6 +8,7 @@
 .moreServicesContainer{
     background-color: #33FFCC;
     padding: 15px;
+    padding-bottom: 7px !important;
     border-radius: 15px;
     overflow-y: scroll;
 }
@@ -19,7 +20,7 @@
     height: 100px;
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     border-radius: 18px;
@@ -27,6 +28,7 @@
 }
 
 .singleServiceContainer h3{
+    margin: 0px 4px;
     text-decoration: none;
     font-weight: 700;
     font-family: "Poppins", sans-serif !important;
@@ -96,6 +98,11 @@
     color: #006633;
 }
 
+@media (max-width: 700px) {
+    .singleServiceContainer{
+        flex-direction: column !important;
+    }}
+
 @media (max-width: 480px) {
     .singleServiceDesContainer p{
         text-align: left;
@@ -114,6 +121,7 @@
     .singleServiceContainer{
         padding: 10px;
         height: 50px;
+        flex-direction: column;
     }
 
     .singleServiceContainer h3{

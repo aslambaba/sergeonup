@@ -1,4 +1,10 @@
+.videoContainer{
+  background-color: white;
+  padding-top: 20px;
+}
+
 .title {
+  
   color: #3366ff;
   font-family: Poppins;
   font-size: 48px;

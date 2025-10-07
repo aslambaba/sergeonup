@@ -1,42 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 .mainContent {
-    padding-top: 160px; /* Header height + extra space */
-    min-height: calc(100vh - 160px);
+    /* Single responsive formula */
+    padding-top: calc(48px + 8vw + 1.5vh);
+    
+    /* With safety bounds */
+    padding-top: clamp(48px, calc(48px + 8vw + 1.5vh), 200px);
+    
+    min-height: calc(100vh - clamp(80px, 15vw, 180px));
+
+    background-color: #3366FF;
 }
 
-/* Responsive padding adjustments */
+/* Only 3 key breakpoints for fine-tuning */
+
 @media (min-width: 1200px) {
     .mainContent {
-        padding-top: 175px;
-        min-height: calc(100vh - 180px);
+        padding-top: clamp(150px, 2vw, 200px);
     }
 }
 
-@media (max-width: 992px) {
+@media (min-width: 660px) and (max-width: 1199px) {
     .mainContent {
-        padding-top: 100px;
-        min-height: calc(100vh - 140px);
+        padding-top: clamp(90px, 9vw, 150px);
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 659px) {
     .mainContent {
-        padding-top: 100px;
-        min-height: calc(100vh - 120px);
-    }
-}
-
-@media (max-width: 600px) {
-    .mainContent {
-        padding-top: 70px;
-        min-height: calc(100vh - 100px);
-    }
-}
-
-@media (max-width: 480px) {
-    .mainContent {
-        padding-top: 50px;
-        min-height: calc(100vh - 80px);
+        padding-top: clamp(48px, 11vw, 90px);
     }
 }

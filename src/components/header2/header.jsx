@@ -6,6 +6,9 @@ import MainLogo from "./images/logo.jpg";
 import BootAchat from "./images/bookAchat.png";
 import ProfitNF from "./images/profitornofee.png";
 import MainLogo2 from "./images/musicnote.png";
+import MusicLogo1 from "./images/musicLogo1.jpeg"; // default
+import MusicLogo2 from "./images/musicLogo2.jpeg"; // hover
+import MusicLogo3 from "./images/musicLogo3.jpeg"; // selected
 import MusicControlPopup from "@/click/MusicControlPopup/MusicControlPopup";
 import { useMusic } from "@/context/MusicContext";
 import Link from "next/link";
@@ -14,13 +17,27 @@ import { useRouter } from "next/router";
 export default function Header() {
   const { musicEnabled, askForMusicPreference, setShowPlayer } = useMusic();
   const [showMusicControl, setShowMusicControl] = useState(false);
+  const [isMusicHovered, setIsMusicHovered] = useState(false);
+  const [forceShowLogo2, setForceShowLogo2] = useState(false); // New state
   const router = useRouter();
 
   const handleMusicIconClick = () => {
+    setForceShowLogo2(true);
     if (musicEnabled) {
       setShowMusicControl(true);
     } else {
       askForMusicPreference();
+    }
+  };
+
+  const getMusicIcon = () => {
+    if (forceShowLogo2) {
+      return MusicLogo2;
+    }
+    if (isMusicHovered) {
+      return MusicLogo3; // hover state
+    } else {
+      return MusicLogo1; // default state
     }
   };
 
@@ -82,9 +99,11 @@ export default function Header() {
                     <a href="/contact">Contact</a>{" "}
                     <Image
                       className={styles.musicnoteIcon}
-                      src={MainLogo2}
+                      src={getMusicIcon()}
                       alt="Note"
                       onClick={handleMusicIconClick}
+                      onMouseEnter={() => setIsMusicHovered(true)}
+                      onMouseLeave={() => setIsMusicHovered(false)}
                       style={{ cursor: "pointer" }}
                     />
                   </li>
@@ -115,7 +134,10 @@ export default function Header() {
       {/* Music Control Popup */}
       <MusicControlPopup
         show={showMusicControl}
-        onHide={() => setShowMusicControl(false)}
+        onHide={() => {
+          setShowMusicControl(false);
+          setForceShowLogo2(false);
+        }}
       />
     </>
   );
