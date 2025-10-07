@@ -3,6 +3,7 @@ import styles from "../ms-styles.module.css"
 import { Col, Row } from "react-bootstrap";
 import Image from "next/image";
 import logo from "../images/logo.jpg";
+import Tapme from "../images/tapme.png";
 
 export default function MoreServices() {
 
@@ -30,7 +31,7 @@ export default function MoreServices() {
               era of digital discovery.
               <br /> Most Surgeons haven&apos;t heard of AIOO. Jump on now, ride
               the wave with Surge-on Up!
-              <Image src={logo} height={25} width={30} alt="Logo" />
+              <Image src={logo} height={12} width={15} alt="Logo" />
             </p>
           </div>
         </div>
@@ -81,6 +82,9 @@ export default function MoreServices() {
               </Col>
             </Row>
           </div>
+        </div>
+        <div className={styles.tapmeContainer}>
+          <Image src={Tapme} className={styles.tapme} alt="Logo" />
         </div>
       </div>
     );

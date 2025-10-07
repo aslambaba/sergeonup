@@ -69,7 +69,7 @@
 .singleServiceDesContainer p{
     text-align: left;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 18px;
     font-family: "Poppins", sans-serif !important;
 }
 
@@ -103,24 +103,51 @@
     color: #006633;
 }
 
+.tapmeContainer{
+    text-align: center;
+    margin: 10px 0px;
+}
+.tapme{
+    width: 30%;
+    height: 100px;
+}
+
 @media (max-width: 700px) {
     .singleServiceContainer{
         flex-direction: column !important;
-    }}
+    }
+    .tapme{
+        width: 100%;
+        height: 100px;
+    }
+}
 
 @media (max-width: 480px) {
+
+    .singleServiceDesContainer{
+        padding: 5px 3px;
+    }
+
     .singleServiceDesContainer p{
         text-align: left;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 10px;
     }   
 
+    .moreServicesPricingTable{
+        padding: 0px;
+        margin: 0;
+    }
+
     .moreServicesPricingTable h2{
-        font-size: 1.4em;
+        font-size: 16px !important;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif !important;
     }
 
     .moreServicesContainer{
         padding: 10px;
+
     }
 
     .singleServiceContainer{
@@ -134,7 +161,12 @@
     }
 
     .moreServicesPricingTable p{
-        font-size: 18px;
+        font-size: 12px !important; 
+    }
+
+    .tapme{
+        width: 100%;
+        height: 80px;
     }
 }
 
