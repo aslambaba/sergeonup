@@ -295,6 +295,10 @@
         font-size: 0.7em;
         gap: 3px;
     }
+
+    .menuItemSec li a{
+        -webkit-text-stroke: 0.6px #006633;
+    }
     .musicnoteIcon {
         width: 10px;
         height: 10px;
@@ -331,9 +335,9 @@
 }
 
 /* Very Small Screens */
-@media (max-width: 380px) {
+@media (max-width: 390px) {
     .menuItemSec li {
-        font-size: 0.65em;
+        font-size: 0.65em !important;
         gap: 1px;
         font-weight: 700;
     }
@@ -352,5 +356,6 @@
 
 @media (max-width: 380px) {
     .menuItemSec li {
-        font-size: 0.55em;}
+        font-size: 0.55em !important;
+    }
 }
