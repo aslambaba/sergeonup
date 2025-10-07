@@ -253,6 +253,11 @@
         font-size: 1.1em;
         gap: 3px;
     }
+
+    .menuItemSec li a{
+        -webkit-text-stroke: 0.6px #006633;
+    }
+
     .musicnoteIcon {
         width: 13px;
         height: 13px;
@@ -297,7 +302,7 @@
     }
 
     .menuItemSec li a{
-        -webkit-text-stroke: 0.6px #006633;
+        -webkit-text-stroke: 0.3px #006633;
     }
     .musicnoteIcon {
         width: 10px;
