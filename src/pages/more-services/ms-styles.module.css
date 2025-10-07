@@ -112,12 +112,12 @@
     }
 
     .singleServiceContainer{
-        padding: 5px;
-        height: 70px;
+        padding: 10px;
+        height: 50px;
     }
 
     .singleServiceContainer h3{
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     .moreServicesPricingTable p{
