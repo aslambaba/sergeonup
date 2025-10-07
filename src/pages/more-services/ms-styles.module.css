@@ -28,7 +28,7 @@
     transition: transform 0.6s ease;
 }
 
-.singleServiceContainer:hover{
+.contentContainer:hover{
     transform: scale(1.02) !important;
 }
 

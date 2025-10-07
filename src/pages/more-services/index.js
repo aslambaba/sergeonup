@@ -67,10 +67,17 @@ export default function MoreServices() {
           {moreServices.map((item, index) => {
             return (
               <Link href={`/more-services/${item.link}`} key={index}>
-              <div key={index} className={styles.singleServiceContainer}>
-                <h3>{item.title}</h3>
-                <h3>{item.description}</h3>
-              </div></Link>
+                <div
+                  className={`${styles.singleServiceContainer} ${
+                    item.title !== " "
+                      ? styles.contentContainer
+                      : styles.contentContainerEmpty
+                  }`}
+                >
+                  <h3>{item.title}</h3>
+                  <h3>{item.description}</h3>
+                </div>
+              </Link>
             );
           })}
         </div>
