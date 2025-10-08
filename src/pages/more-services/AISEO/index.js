@@ -3,6 +3,8 @@ import styles from "../ms-styles.module.css"
 import { Col, Row } from "react-bootstrap";
 import Image from "next/image";
 import logo from "../images/logo.jpg";
+import Tapme from "../images/tapme.png";
+import Pricing2 from "../images/pricing2.png";
 
 export default function MoreServices() {
 
@@ -36,8 +38,7 @@ export default function MoreServices() {
             </p>
           </div>
         </div>
-        <br />
-        <div className={styles.moreServicesPricing}>
+        {/* <div className={styles.moreServicesPricing}>
           <div className={styles.moreServicesPricingTable}>
             <Row>
               <Col lg={8} md={8} sm={8} xs={8}></Col>
@@ -83,6 +84,12 @@ export default function MoreServices() {
               </Col>
             </Row>
           </div>
+        </div> */}
+        <div className={styles.tapmeContainer}>
+          <Image src={Pricing2} className={styles.tapme} alt="Logo" />
+        </div>
+        <div className={styles.tapmeContainer}>
+          <Image src={Tapme} className={styles.tapme} alt="Logo" />
         </div>
       </div>
     );
