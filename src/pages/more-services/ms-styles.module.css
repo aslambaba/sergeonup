@@ -147,12 +147,14 @@
 
     .singleServiceDesContainer{
         padding: 5px 3px;
+        margin: 0px;
     }
 
     .singleServiceDesContainer p{
         text-align: left;
         font-weight: 500;
         font-size: 12px;
+        margin: 0px;
     }   
 
     .moreServicesPricingTable{
