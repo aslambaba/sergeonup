@@ -23,7 +23,7 @@ export default function MoreServices() {
               Google&apos;s AI Overviews represent the future of search, already
               starting to appear above even Paid Ads (PPC)! <br /> This is where
               tomorrow&apos;s Clients will find you.
-              <br /> As search evolves, AI Overviews will dominate discovery.
+              <br />As search evolves, AI Overviews will dominate discovery.
               When someone searches &quot;best facelift surgeon&quot;,
               Google&apos;s AI blends &ldquo;mentions&rdquo; from all
               authoritative sources. You must be among them.
