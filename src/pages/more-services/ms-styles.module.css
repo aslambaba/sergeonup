@@ -145,10 +145,6 @@
 
 @media (max-width: 480px) {
 
-    .moreServices{
-        height: 100vh;
-    }
-
     .singleServiceDesContainer{
         padding: 5px 3px;
     }
@@ -156,7 +152,7 @@
     .singleServiceDesContainer p{
         text-align: left;
         font-weight: 500;
-        font-size: 12px;
+        font-size: 13px;
     }   
 
     .moreServicesPricingTable{
