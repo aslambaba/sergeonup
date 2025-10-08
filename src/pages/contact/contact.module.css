@@ -60,6 +60,7 @@
     padding: 10px;
     font-size: 18px;
     text-align: center;
+    border-radius: 10px !important;
 }
 
 .contactTextSec1 img{
@@ -227,7 +228,7 @@
 
     .contactWrappeer{
         background-color: #3366ff;
-        padding: 30px;
+        padding: 20px;
     }
 
     .contactMainSection h2 {
@@ -288,6 +289,12 @@
     }
 }
 
+@media (max-width: 410px) {
+    .contactMainSection h4{
+        font-size: 0.9em !important;
+    }
+}
+
 /* Extra tiny screens (320px and below) */
 @media (max-width: 360px) {
     .whatsYO{
@@ -298,4 +305,6 @@
     .contactMainSection h2 {
         font-size: 24px;
     }
+
+    
 }
