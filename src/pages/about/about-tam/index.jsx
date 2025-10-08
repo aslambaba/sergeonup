@@ -38,7 +38,7 @@ export default function AboutTam() {
           </h3>
           <h4>
             He is the top Beverly Hills and La Jolla, San Diego Aesthetic
-            Surgeon. Tam optimised his website and helped select his logo.
+            Surgeon. Tam optimised his website and helped select his logo.<br/>
             “We’ve worked with Tam for several years. He is extremely
             professional in his approach to our website and online presence. His
             unparalleled SEO strategies have expanded our businesses.”

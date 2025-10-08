@@ -85,10 +85,10 @@ export default function Header() {
                   </li>
                   <li
                     className={
-                      router.pathname === "/blogs" ? styles.active : ""
+                      router.pathname === "/pdfBlogs" ? styles.active : ""
                     }
                   >
-                    <a href="/blogs">Blog</a>
+                    <a href="/pdfBlogs">Blog</a>
                   </li>
                   <li
                     className={

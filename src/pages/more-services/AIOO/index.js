@@ -11,7 +11,9 @@ export default function MoreServices() {
   return (
     <div>
       <div className={styles.buttonContainer}>
-        <button>More Services</button>
+        <Link href={"/more-services"}>
+          <button>More Services</button>
+        </Link>
       </div>
       <div className={styles.moreServices}>
         <div className={styles.moreServicesContainer}>

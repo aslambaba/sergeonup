@@ -11,7 +11,7 @@
     text-align: center;
     color: #3366ff;
     font-weight: 700;
-    margin: 40px 20px;
+    margin: 40px 0px !important;
     padding: 0 10px;
 }
 
@@ -39,9 +39,9 @@
     background-color: #33FFCC;
     border: 5px solid #006633;
     border-radius: 25px;
-    padding: 20px;
+    padding: 10px 10px !important;
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 100% !important;
 }
 
 .AboutRobinSecText h3 {
@@ -50,6 +50,7 @@
     font-size: 20px;
     margin-bottom: 15px;
     line-height: 1.4;
+    margin: 0 !important;
 }
 
 .AboutRobinSecText h4 {
@@ -58,7 +59,7 @@
     font-family: "Poppins", sans-serif !important;
     color: #3366ff;
     line-height: 1.6;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 /* Large screens (desktops 1200px+) */
@@ -279,266 +280,82 @@
     }
 }
 
-/* Image scaling for different screen sizes based on original inline styles */
+/* Image scaling for different screen sizes */
 
 /* Large screens */
 @media (min-width: 1200px) {
-    /* First section - Robin and John in Verona */
-    .AboutRobinSec:nth-child(2) .ImageContainer img:first-child {
-        width: 200px;
-        height: 135px;
+    .ImageContainer img:first-child {
+        max-width: 180px;
+        max-height: 190px;
     }
     
-    .AboutRobinSec:nth-child(2) .ImageContainer img:last-child {
-        width: 115px;
-        height: 60px;
-    }
-    
-    /* Second section - Microsoft/Nokia */
-    .AboutRobinSec:nth-child(3) .ImageContainer img:first-child {
-        width: 200px;
-        height: 135px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:last-child {
-        width: 115px;
-        height: 115px;
-    }
-    
-    /* Third section - Genius mug */
-    .AboutRobinSec:nth-child(4) .ImageContainer img:first-child {
-        width: 200px;
-        height: 135px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:last-child {
-        width: 115px;
-        height: 60px;
-    }
-    
-    /* Fourth section - David Brennan */
-    .AboutRobinSec:nth-child(5) .ImageContainer img:first-child {
-        width: 160px;
-        height: 160px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:last-child {
-        width: 115px;
-        height: 60px;
+    .ImageContainer img:last-child {
+        max-width: 150px;
+        max-height: 150px;
     }
 }
 
-/* Medium-large screens (992px - 1199px) */
+/* Medium-large screens */
 @media (max-width: 1199px) and (min-width: 992px) {
-    .AboutRobinSec:nth-child(2) .ImageContainer img:first-child {
-        width: 160px;
-        height: 110px;
+    .ImageContainer img:first-child {
+        max-width: 140px;
+        max-height: 150px;
     }
     
-    .AboutRobinSec:nth-child(2) .ImageContainer img:last-child {
-        width: 90px;
-        height: 45px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:first-child {
-        width: 160px;
-        height: 110px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:last-child {
-        width: 90px;
-        height: 90px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:first-child {
-        width: 160px;
-        height: 110px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:last-child {
-        width: 90px;
-        height: 45px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:first-child {
-        width: 125px;
-        height: 125px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:last-child {
-        width: 90px;
-        height: 45px;
+    .ImageContainer img:last-child {
+        max-width: 120px;
+        max-height: 120px;
     }
 }
 
-/* Medium screens (768px - 991px) */
+/* Medium screens */
 @media (max-width: 991px) and (min-width: 768px) {
-    .AboutRobinSec:nth-child(2) .ImageContainer img:first-child {
-        width: 135px;
-        height: 90px;
+    .ImageContainer img:first-child {
+        max-width: 120px;
+        max-height: 130px;
     }
     
-    .AboutRobinSec:nth-child(2) .ImageContainer img:last-child {
-        width: 75px;
-        height: 38px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:first-child {
-        width: 135px;
-        height: 90px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:last-child {
-        width: 75px;
-        height: 75px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:first-child {
-        width: 135px;
-        height: 90px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:last-child {
-        width: 75px;
-        height: 38px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:first-child {
-        width: 105px;
-        height: 105px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:last-child {
-        width: 75px;
-        height: 38px;
+    .ImageContainer img:last-child {
+        max-width: 100px;
+        max-height: 100px;
     }
 }
 
-/* Small screens (576px - 767px) */
+/* Small screens */
 @media (max-width: 767px) and (min-width: 576px) {
-    .AboutRobinSec:nth-child(2) .ImageContainer img:first-child {
-        width: 110px;
-        height: 75px;
+    .ImageContainer img:first-child {
+        max-width: 100px;
+        max-height: 110px;
     }
     
-    .AboutRobinSec:nth-child(2) .ImageContainer img:last-child {
-        width: 65px;
-        height: 32px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:first-child {
-        width: 110px;
-        height: 75px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:last-child {
-        width: 65px;
-        height: 65px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:first-child {
-        width: 110px;
-        height: 75px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:last-child {
-        width: 65px;
-        height: 32px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:first-child {
-        width: 85px;
-        height: 85px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:last-child {
-        width: 65px;
-        height: 32px;
+    .ImageContainer img:last-child {
+        max-width: 80px;
+        max-height: 80px;
     }
 }
 
-/* Extra small screens (480px - 575px) */
+/* Extra small screens */
 @media (max-width: 575px) and (min-width: 480px) {
-    .AboutRobinSec:nth-child(2) .ImageContainer img:first-child {
-        width: 90px;
-        height: 60px;
+    .ImageContainer img:first-child {
+        max-width: 90px;
+        max-height: 100px;
     }
     
-    .AboutRobinSec:nth-child(2) .ImageContainer img:last-child {
-        width: 50px;
-        height: 25px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:first-child {
-        width: 90px;
-        height: 60px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:last-child {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:first-child {
-        width: 90px;
-        height: 60px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:last-child {
-        width: 50px;
-        height: 25px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:first-child {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:last-child {
-        width: 50px;
-        height: 25px;
+    .ImageContainer img:last-child {
+        max-width: 70px;
+        max-height: 70px;
     }
 }
 
-/* Very small screens (under 480px) */
+/* Very small screens */
 @media (max-width: 479px) {
-    .AboutRobinSec:nth-child(2) .ImageContainer img:first-child {
-        width: 80px;
-        height: 55px;
+    .ImageContainer img:first-child {
+        max-width: 80px;
+        max-height: 90px;
     }
     
-    .AboutRobinSec:nth-child(2) .ImageContainer img:last-child {
-        width: 45px;
-        height: 22px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:first-child {
-        width: 80px;
-        height: 55px;
-    }
-    
-    .AboutRobinSec:nth-child(3) .ImageContainer img:last-child {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:first-child {
-        width: 80px;
-        height: 55px;
-    }
-    
-    .AboutRobinSec:nth-child(4) .ImageContainer img:last-child {
-        width: 45px;
-        height: 22px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:first-child {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .AboutRobinSec:nth-child(5) .ImageContainer img:last-child {
-        width: 45px;
-        height: 22px;
+    .ImageContainer img:last-child {
+        max-width: 60px;
+        max-height: 60px;
     }
 }

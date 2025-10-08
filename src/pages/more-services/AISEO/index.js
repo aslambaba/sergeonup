@@ -10,35 +10,41 @@ export default function MoreServices() {
 
     
     return (
-      <div className={styles.moreServices}>
-        <div className={styles.moreServicesContainer}>
-          <div className={styles.singleServiceDesContainer}>
-            <h3>AISEO</h3>
-            <p>
-              AI Search Engines are reshaping how Clients discover Surgeons like
-              you. Platforms like ChatGPT, Perplexity, and Google&apos;s AI
-              Overview are now available.
-              <br /> They answer millions of health queries daily. When someone
-              asks, &quot;Best rhinoplasty surgeon near me,&quot; AI
-              doesn&apos;t just give a list of websites. It offers
-              recommendations with context.
-              <br /> Being featured in AI responses is the new frontier of
-              digital visibility.
-              <br /> AI engines prioritise authoritative, structured content
-              that answers patient questions. They get their information from
-              verified sources, reviews, and detailed service descriptions.
-              <br /> If your practice isn&apos;t optimised for AI discovery,
-              you&apos;re invisible. A growing section of Clients now trusts AI
-              when searching for a Surgeon.
-              <br /> The vast majority of practices haven&apos;t even started AI
-              Search optimisation.
-              <br /> Don&apos;t fall behind! Get in now, ride the crest of the
-              wave!
-              <Image src={logo} height={25} width={30} alt="Logo" />
-            </p>
-          </div>
+      <div>
+        <div className={styles.buttonContainer}>
+          <Link href={"/more-services"}>
+            <button>More Services</button>
+          </Link>
         </div>
-        {/* <div className={styles.moreServicesPricing}>
+        <div className={styles.moreServices}>
+          <div className={styles.moreServicesContainer}>
+            <div className={styles.singleServiceDesContainer}>
+              <h3>AISEO</h3>
+              <p>
+                AI Search Engines are reshaping how Clients discover Surgeons
+                like you. Platforms like ChatGPT, Perplexity, and Google&apos;s
+                AI Overview are now available.
+                <br /> They answer millions of health queries daily. When
+                someone asks, &quot;Best rhinoplasty surgeon near me,&quot; AI
+                doesn&apos;t just give a list of websites. It offers
+                recommendations with context.
+                <br /> Being featured in AI responses is the new frontier of
+                digital visibility.
+                <br /> AI engines prioritise authoritative, structured content
+                that answers patient questions. They get their information from
+                verified sources, reviews, and detailed service descriptions.
+                <br /> If your practice isn&apos;t optimised for AI discovery,
+                you&apos;re invisible. A growing section of Clients now trusts
+                AI when searching for a Surgeon.
+                <br /> The vast majority of practices haven&apos;t even started
+                AI Search optimisation.
+                <br /> Don&apos;t fall behind! Get in now, ride the crest of the
+                wave!
+                <Image src={logo} height={25} width={30} alt="Logo" />
+              </p>
+            </div>
+          </div>
+          {/* <div className={styles.moreServicesPricing}>
           <div className={styles.moreServicesPricingTable}>
             <Row>
               <Col lg={8} md={8} sm={8} xs={8}></Col>
@@ -85,11 +91,12 @@ export default function MoreServices() {
             </Row>
           </div>
         </div> */}
-        <div className={styles.tapmeContainer}>
-          <Image src={Pricing2} className={styles.tapme} alt="Logo" />
-        </div>
-        <div className={styles.tapmeContainer}>
-          <Image src={Tapme} className={styles.tapme} alt="Logo" />
+          <div className={styles.tapmeContainer}>
+            <Image src={Pricing2} className={styles.tapme} alt="Logo" />
+          </div>
+          <div className={styles.tapmeContainer}>
+            <Image src={Tapme} className={styles.tapme} alt="Logo" />
+          </div>
         </div>
       </div>
     );

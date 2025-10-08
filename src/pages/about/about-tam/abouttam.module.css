@@ -11,7 +11,7 @@
     text-align: center;
     color: #3366ff;
     font-weight: 700;
-    margin: 40px 20px;
+    margin: 40px 0px !important;
     padding: 0 10px;
 }
 
@@ -39,9 +39,9 @@
     background-color: #33FFCC;
     border: 5px solid #006633;
     border-radius: 25px;
-    padding: 20px;
+    padding: 10px 10px !important;
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 100% !important;
 }
 
 .AboutRobinSecText h3 {
@@ -50,6 +50,7 @@
     font-size: 20px;
     margin-bottom: 15px;
     line-height: 1.4;
+    margin: 0 !important;
 }
 
 .AboutRobinSecText h4 {
@@ -58,7 +59,7 @@
     font-family: "Poppins", sans-serif !important;
     color: #3366ff;
     line-height: 1.6;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 /* Large screens (desktops 1200px+) */

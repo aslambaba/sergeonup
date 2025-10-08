@@ -3,7 +3,6 @@
 .mainContent {
     padding-top: 100px; /* Header height + extra space */
     min-height: calc(100vh - 160px);
-    background-color: #3366FF;
     font-family: "Poppins", sans-serif !important;
 }
 

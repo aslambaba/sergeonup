@@ -22,7 +22,7 @@ export default function PdfBlogManagement() {
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
-      router.push('/admin/login');
+      router.push('/login');
     } else if (isAuthenticated) {
       loadPdfBlogs();
     }
