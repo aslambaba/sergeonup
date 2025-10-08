@@ -19,10 +19,10 @@
 .moreServices{
     background-color: #3366FF;
     padding: 17px;
-    height: 90vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .moreServicesContainer{
